@@ -4,6 +4,7 @@ import { motion, useScroll, useMotionValueEvent, useSpring } from "motion/react"
 import { useState } from "react"
 
 import { NavLinks } from "./NavLinks"
+import { MobileMenu } from "./MobileMenu"
 
 export function Header() {
   const { scrollYProgress, scrollY } = useScroll()
@@ -46,6 +47,9 @@ export function Header() {
         <nav className="hidden md:flex gap-6 relative z-10">
           <NavLinks />
         </nav>
+
+        {/* Mobile Menu */}
+        <MobileMenu isOpen={mobileMenuOpen} setIsOpen={setMobileMenuOpen} />
       </div>
       
       {/* Scroll Progress Bar */}
