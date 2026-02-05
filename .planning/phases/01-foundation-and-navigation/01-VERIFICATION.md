@@ -2,7 +2,12 @@
 phase: 01-foundation-and-navigation
 verified: 2026-02-05T00:00:00Z
 status: passed
-score: 6/6 must-haves verified
+score: 8/8 must-haves verified
+re_verification:
+  previous_status: passed
+  gaps_closed:
+    - "Font Configuration (Geist Sans)"
+    - "Hydration Warning Suppression"
 human_verification:
   - test: "Sticky Header Behavior"
     expected: "Header should slide up (hide) when scrolling down, and slide down (show) when scrolling up."
@@ -13,6 +18,9 @@ human_verification:
   - test: "Mobile Menu Toggle"
     expected: "On mobile size, clicking hamburger opens menu. Clicking a link closes it. Scrolling down closes it."
     why_human: "Responsive interaction flow."
+  - test: "Font Rendering"
+    expected: "Inspect body text to confirm 'Geist Sans' is the computed font family."
+    why_human: "Visual verification of font application."
 ---
 
 # Phase 1: Foundation & Navigation Verification Report
@@ -20,6 +28,7 @@ human_verification:
 **Phase Goal:** Initialize the project architecture and global navigation shell.
 **Verified:** 2026-02-05
 **Status:** passed
+**Re-verification:** Yes (Integrated Plan 03 Font Fix results)
 
 ## Goal Achievement
 
@@ -33,16 +42,18 @@ human_verification:
 | 4 | **Interactive Nav** | ✓ VERIFIED | `NavLinks.tsx` uses `IntersectionObserver` for Scroll Spy and updates URL hash. |
 | 5 | **Mobile Ready** | ✓ VERIFIED | `MobileMenu.tsx` handles responsive state; `Header.tsx` closes it on scroll. |
 | 6 | **Data Layer** | ✓ VERIFIED | `src/data/` files exist with correct schemas (`demoUrl`, `socials` keys). |
+| 7 | **Font Configuration** | ✓ VERIFIED | `globals.css` maps `--font-sans` to Geist; `layout.tsx` injects variables. |
+| 8 | **Hydration Safety** | ✓ VERIFIED | `layout.tsx` includes `suppressHydrationWarning` on body. |
 
-**Score:** 6/6 truths verified
+**Score:** 8/8 truths verified
 
 ### Required Artifacts
 
 | Artifact | Expected | Status | Details |
 |---|---|---|---|
 | `package.json` | Next 16 + Tailwind 4 | ✓ VERIFIED | Correct versions installed. |
-| `src/app/globals.css` | CSS-first config | ✓ VERIFIED | Uses `@import "tailwindcss";`. |
-| `src/app/layout.tsx` | Smooth Scroll | ✓ VERIFIED | Wrapped in `<ReactLenis root>`. |
+| `src/app/globals.css` | CSS-first config | ✓ VERIFIED | Uses `@import "tailwindcss";` & `@theme` with font mapping. |
+| `src/app/layout.tsx` | Root Layout | ✓ VERIFIED | `ReactLenis`, `Geist` variables, `suppressHydrationWarning`. |
 | `Header.tsx` | Logic & Motion | ✓ VERIFIED | Implements sticky/hide logic and progress bar. |
 | `NavLinks.tsx` | Scroll Spy | ✓ VERIFIED | Implements intersection observer and active states. |
 | `MobileMenu.tsx` | Responsive | ✓ VERIFIED | Handles mobile toggle and animation. |
@@ -56,6 +67,7 @@ human_verification:
 | `Header.tsx` | `MobileMenu.tsx` | Import | ✓ WIRED | Menu component integrated. |
 | `Header.tsx` | `NavLinks.tsx` | Import | ✓ WIRED | Links component integrated. |
 | `NavLinks.tsx` | `window.history` | API | ✓ WIRED | Updates URL hash on scroll. |
+| `globals.css` | `layout.tsx` | CSS Var | ✓ WIRED | `--font-geist-sans` consumed by Tailwind theme. |
 
 ### Requirements Coverage
 
@@ -68,6 +80,7 @@ human_verification:
 | **NAV-01** (Sticky Header) | ✓ SATISFIED | - |
 | **NAV-02** (Scroll Links) | ✓ SATISFIED | - |
 | **NAV-03** (Mobile Menu) | ✓ SATISFIED | - |
+| **UI-01** (Typography) | ✓ SATISFIED | Geist font configured globally. |
 
 ### Anti-Patterns Found
 
@@ -77,11 +90,12 @@ None detected. Codebase is clean and adheres to the "Linear" aesthetic requireme
 
 1. **Sticky Header Behavior**: Verify header hides on scroll down > 150px and shows on scroll up.
 2. **Scroll Spy**: Verify nav links highlight correctly as you scroll through the dummy sections.
-3. **Mobile Menu**: Verify opening/closing and that it auto-closes on scroll down (a nice polish feature added).
+3. **Mobile Menu**: Verify opening/closing and that it auto-closes on scroll down.
+4. **Font Rendering**: Visual check that Geist Sans is applied to the page.
 
 ### Gaps Summary
 
-No gaps found. The foundation is solid and ready for Phase 2 (Content).
+No gaps found. The phase is complete, including the font configuration fix.
 
 ---
 
