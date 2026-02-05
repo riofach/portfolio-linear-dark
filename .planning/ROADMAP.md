@@ -11,6 +11,12 @@ This roadmap delivers the Portfolio Linear Dark as a high-performance Single Pag
 ## Phase 1: Foundation & Navigation
 **Goal:** Initialize the project architecture and global navigation shell.
 
+**Plans:** 2 plans
+
+Plans:
+- [ ] 01-01-PLAN.md — Foundation Setup (Tailwind v4, Motion v12, Data Layer)
+- [ ] 01-02-PLAN.md — Navigation Shell (Smart Header, Mobile Menu, Scroll Spy)
+
 | Requirement | Description |
 |-------------|-------------|
 | **ARCH-01** | Initialize Next.js 16 project with App Router, TypeScript, and ESLint. |
@@ -74,6 +80,6 @@ This roadmap delivers the Portfolio Linear Dark as a high-performance Single Pag
 
 | Phase | Status |
 |-------|--------|
-| **1. Foundation & Navigation** | **Pending** |
+| **1. Foundation & Navigation** | **Planned** |
 | 2. Content Structure & Layout | Pending |
 | 3. Motion & Interactions | Pending |
