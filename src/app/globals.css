@@ -3,13 +3,38 @@
 @theme {
   --color-background: var(--color-zinc-950);
   --color-foreground: #ffffff;
+  --color-primary: #5b13ec;
+  --color-card-dark: #16181D;
+  --color-border-dark: #1E2029;
   --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  
+  --image-noise: url("https://grainy-gradients.vercel.app/noise.svg");
 }
 
 @layer base {
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+  }
+}
+
+@layer utilities {
+  .glass-nav {
+    background: rgba(15, 17, 23, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px rgba(91, 19, 236, 0.5);
+  }
+  
+  .hero-glow {
+    background: radial-gradient(
+      circle at 50% 50%,
+      rgba(91, 19, 236, 0.15) 0%,
+      rgba(22, 16, 34, 0) 50%
+    );
   }
 }

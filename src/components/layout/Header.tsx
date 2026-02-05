@@ -1,62 +1,40 @@
 "use client"
 
-import { motion, useScroll, useMotionValueEvent, useSpring } from "motion/react"
 import { useState } from "react"
-
+import { Terminal, Download } from "lucide-react"
 import { NavLinks } from "./NavLinks"
 import { MobileMenu } from "./MobileMenu"
 
 export function Header() {
-  const { scrollYProgress, scrollY } = useScroll()
-  const [hidden, setHidden] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const previous = scrollY.getPrevious() ?? 0
-    if (latest > previous && latest > 150) {
-      setHidden(true)
-      setMobileMenuOpen(false) // Close mobile menu on scroll down
-    } else {
-      setHidden(false)
-    }
-  })
-
-  const scaleX = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  })
-
   return (
-    <motion.header
-      variants={{
-        visible: { y: 0 },
-        hidden: { y: "-100%" },
-      }}
-      animate={hidden ? "hidden" : "visible"}
-      transition={{ duration: 0.35, ease: "easeInOut" }}
-      className="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-zinc-950/70 border-b border-white/5"
-    >
-      <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <header className="sticky top-0 z-50 w-full border-b border-white/5 glass-nav">
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
-        <div className="font-bold text-white text-lg tracking-tight">
-          Portfolio
+        <div className="flex items-center gap-2">
+          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+            <Terminal className="h-5 w-5" />
+          </div>
+          <span className="text-lg font-bold tracking-tight text-white">John Doe</span>
         </div>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden md:flex gap-6 relative z-10">
+        <nav className="hidden md:flex items-center gap-8">
           <NavLinks />
         </nav>
 
-        {/* Mobile Menu */}
-        <MobileMenu isOpen={mobileMenuOpen} setIsOpen={setMobileMenuOpen} />
+        {/* Right Actions */}
+        <div className="flex items-center gap-4">
+          <button className="hidden md:flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-white/10 hover:border-white/20">
+            <Download className="h-[18px] w-[18px]" />
+            Resume
+          </button>
+          
+          {/* Mobile Menu Trigger */}
+          <MobileMenu isOpen={mobileMenuOpen} setIsOpen={setMobileMenuOpen} />
+        </div>
       </div>
-      
-      {/* Scroll Progress Bar */}
-      <motion.div
-        className="absolute bottom-0 left-0 h-[1px] w-full bg-zinc-500 origin-left"
-        style={{ scaleX }}
-      />
-    </motion.header>
+    </header>
   )
 }

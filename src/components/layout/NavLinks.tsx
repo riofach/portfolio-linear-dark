@@ -6,14 +6,15 @@ import Link from "next/link"
 import { cn } from "@/lib/utils"
 
 const links = [
+  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
   { name: "Work", href: "#work" },
-  { name: "Skills", href: "#skills" },
+  { name: "Tools", href: "#skills" },
   { name: "Contact", href: "#contact" },
 ]
 
 export function NavLinks({ mobile = false, onItemClick }: { mobile?: boolean; onItemClick?: () => void }) {
-  const [activeSection, setActiveSection] = useState("")
+  const [activeSection, setActiveSection] = useState("home")
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -60,18 +61,25 @@ export function NavLinks({ mobile = false, onItemClick }: { mobile?: boolean; on
           href={link.href}
           onClick={(e) => handleScroll(e, link.href)}
           className={cn(
-            "relative text-sm font-medium transition-colors hover:text-white",
+            "relative text-sm font-medium transition-colors hover:text-white py-1 group",
             mobile ? "text-lg py-2" : "",
             activeSection === link.href.substring(1) ? "text-white" : "text-zinc-400"
           )}
         >
           {link.name}
+          
+          {/* Active State Underline */}
           {!mobile && activeSection === link.href.substring(1) && (
             <motion.span
               layoutId="activeSection"
-              className="absolute -bottom-[21px] left-0 right-0 h-[1px] bg-white"
+              className="absolute -bottom-[1px] left-0 right-0 h-[2px] bg-primary shadow-[0_0_8px_2px_rgba(91,19,236,0.6)]"
               transition={{ type: "spring", stiffness: 380, damping: 30 }}
             />
+          )}
+
+          {/* Hover State Underline (for non-active items) */}
+          {!mobile && activeSection !== link.href.substring(1) && (
+             <span className="absolute bottom-[-1px] left-0 h-[2px] w-full scale-x-0 bg-primary transition-transform duration-300 ease-in-out group-hover:scale-x-100" />
           )}
         </Link>
       ))}
