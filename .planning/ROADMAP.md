@@ -14,8 +14,8 @@ This roadmap delivers the Portfolio Linear Dark as a high-performance Single Pag
 **Plans:** 2 plans
 
 Plans:
-- [ ] 01-01-PLAN.md — Foundation Setup (Tailwind v4, Motion v12, Data Layer)
-- [ ] 01-02-PLAN.md — Navigation Shell (Smart Header, Mobile Menu, Scroll Spy)
+- [x] 01-01-PLAN.md — Foundation Setup (Tailwind v4, Motion v12, Data Layer)
+- [x] 01-02-PLAN.md — Navigation Shell (Smart Header, Mobile Menu, Scroll Spy)
 
 | Requirement | Description |
 |-------------|-------------|
@@ -80,6 +80,6 @@ Plans:
 
 | Phase | Status |
 |-------|--------|
-| **1. Foundation & Navigation** | **Planned** |
-| 2. Content Structure & Layout | Pending |
+| **1. Foundation & Navigation** | **Complete** |
+| 2. Content Structure & Layout | Planned |
 | 3. Motion & Interactions | Pending |

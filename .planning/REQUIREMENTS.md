@@ -3,15 +3,15 @@
 ## v1 Requirements
 
 ### Architecture
-- [ ] **ARCH-01**: Initialize Next.js 16 project with App Router, TypeScript, and ESLint.
-- [ ] **ARCH-02**: Configure Tailwind CSS v4 with the "linear-dark" theme variables (colors, fonts) from `code1.html`.
-- [ ] **ARCH-03**: Install and configure `motion` (Motion.dev v12) for animations.
-- [ ] **ARCH-04**: Create data configuration files (`data/experience.ts`, `data/skills.ts`, `data/projects.ts`) for separated content management.
+- [x] **ARCH-01**: Initialize Next.js 16 project with App Router, TypeScript, and ESLint.
+- [x] **ARCH-02**: Configure Tailwind CSS v4 with the "linear-dark" theme variables (colors, fonts) from `code1.html`.
+- [x] **ARCH-03**: Install and configure `motion` (Motion.dev v12) for animations.
+- [x] **ARCH-04**: Create data configuration files (`data/experience.ts`, `data/skills.ts`, `data/projects.ts`) for separated content management.
 
 ### Navigation
-- [ ] **NAV-01**: Implement a sticky header with glassmorphism effect (`backdrop-blur`).
-- [ ] **NAV-02**: Create smooth scroll navigation links to sections (#about, #work, #skills, #contact).
-- [ ] **NAV-03**: Build a responsive mobile menu with a hamburger toggle.
+- [x] **NAV-01**: Implement a sticky header with glassmorphism effect (`backdrop-blur`).
+- [x] **NAV-02**: Create smooth scroll navigation links to sections (#about, #work, #skills, #contact).
+- [x] **NAV-03**: Build a responsive mobile menu with a hamburger toggle.
 
 ### Hero Section
 - [ ] **SEC-01**: Implement Hero section with "text glow" effects and background grid pattern.
@@ -50,13 +50,13 @@
 ## Traceability
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ARCH-01 | Phase 1 | Pending |
-| ARCH-02 | Phase 1 | Pending |
-| ARCH-03 | Phase 1 | Pending |
-| ARCH-04 | Phase 1 | Pending |
-| NAV-01 | Phase 1 | Pending |
-| NAV-02 | Phase 1 | Pending |
-| NAV-03 | Phase 1 | Pending |
+| ARCH-01 | Phase 1 | Complete |
+| ARCH-02 | Phase 1 | Complete |
+| ARCH-03 | Phase 1 | Complete |
+| ARCH-04 | Phase 1 | Complete |
+| NAV-01 | Phase 1 | Complete |
+| NAV-02 | Phase 1 | Complete |
+| NAV-03 | Phase 1 | Complete |
 | SEC-01 | Phase 2 | Pending |
 | MOT-01 | Phase 3 | Pending |
 | SEC-02 | Phase 2 | Pending |
