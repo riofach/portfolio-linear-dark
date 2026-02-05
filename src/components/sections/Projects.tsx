@@ -1,4 +1,5 @@
 import React from "react";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 
 export function Projects() {
   return (
@@ -19,9 +20,7 @@ export function Projects() {
             href="#"
           >
             View all projects
-            <span className="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1">
-              arrow_right_alt
-            </span>
+            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
@@ -57,9 +56,7 @@ export function Projects() {
               <div className="mt-6 flex items-center gap-4">
                 <button className="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1">
                   Case Study
-                  <span className="material-symbols-outlined text-sm">
-                    arrow_outward
-                  </span>
+                  <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -97,9 +94,7 @@ export function Projects() {
               <div className="mt-6 flex items-center gap-4">
                 <button className="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1">
                   Case Study
-                  <span className="material-symbols-outlined text-sm">
-                    arrow_outward
-                  </span>
+                  <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -134,9 +129,7 @@ export function Projects() {
               <div className="mt-6 flex items-center gap-4">
                 <button className="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1">
                   Case Study
-                  <span className="material-symbols-outlined text-sm">
-                    arrow_outward
-                  </span>
+                  <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -171,9 +164,7 @@ export function Projects() {
               <div className="mt-6 flex items-center gap-4">
                 <button className="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1">
                   Case Study
-                  <span className="material-symbols-outlined text-sm">
-                    arrow_outward
-                  </span>
+                  <ArrowUpRight className="w-4 h-4" />
                 </button>
               </div>
             </div>

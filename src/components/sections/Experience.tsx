@@ -2,14 +2,18 @@ import { Terminal, PenTool, Code } from "lucide-react";
 
 export function Experience() {
   return (
-    <div className="flex flex-col items-center w-full">
-      <section className="w-full max-w-[960px] px-4 md:px-8 py-16">
+    <section className="py-24 px-6 lg:px-8" id="experience">
+      <div className="mx-auto max-w-7xl">
         <div className="flex flex-col gap-8">
           <div className="flex flex-col gap-2">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Experience</h2>
-            <p className="text-zinc-400 text-lg">My professional journey and milestones.</p>
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+              Experience
+            </h2>
+            <p className="text-zinc-400 text-lg">
+              My professional journey and milestones.
+            </p>
           </div>
-          
+
           <div className="mt-8 grid grid-cols-[48px_1fr] gap-x-4 md:gap-x-8">
             {/* Timeline Item 1 */}
             <div className="flex flex-col items-center pt-2">
@@ -22,14 +26,21 @@ export function Experience() {
             </div>
             <div className="flex flex-col pb-12 pt-1">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                <h3 className="text-xl font-semibold text-white">Senior Fullstack Developer</h3>
+                <h3 className="text-xl font-semibold text-white">
+                  Senior Fullstack Developer
+                </h3>
                 <span className="text-sm font-medium text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit">
                   2021 - Present
                 </span>
               </div>
-              <p className="text-zinc-400 text-base mt-2 leading-relaxed">TechCorp Inc.</p>
+              <p className="text-zinc-400 text-base mt-2 leading-relaxed">
+                TechCorp Inc.
+              </p>
               <p className="text-slate-400 mt-4 leading-relaxed max-w-2xl">
-                Leading the frontend migration to React 18 and Next.js. Architecting scalable microservices using Node.js and gRPC. Mentoring a squad of 5 junior developers and implementing CI/CD best practices.
+                Leading the frontend migration to React 18 and Next.js.
+                Architecting scalable microservices using Node.js and gRPC.
+                Mentoring a squad of 5 junior developers and implementing CI/CD
+                best practices.
               </p>
             </div>
 
@@ -42,14 +53,21 @@ export function Experience() {
             </div>
             <div className="flex flex-col pb-12 pt-1">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                <h3 className="text-xl font-semibold text-white">UI/UX Designer</h3>
+                <h3 className="text-xl font-semibold text-white">
+                  UI/UX Designer
+                </h3>
                 <span className="text-sm font-medium text-zinc-400 px-3 py-1 rounded-full bg-card-dark border border-border-dark w-fit">
                   2019 - 2021
                 </span>
               </div>
-              <p className="text-zinc-400 text-base mt-2 leading-relaxed">Creative Studio</p>
+              <p className="text-zinc-400 text-base mt-2 leading-relaxed">
+                Creative Studio
+              </p>
               <p className="text-slate-400 mt-4 leading-relaxed max-w-2xl">
-                Designed user-centric interfaces for mobile and web applications. Conducted user research, wireframing, and prototyping in Figma. Collaborated closely with developers to ensure design fidelity.
+                Designed user-centric interfaces for mobile and web
+                applications. Conducted user research, wireframing, and
+                prototyping in Figma. Collaborated closely with developers to
+                ensure design fidelity.
               </p>
             </div>
 
@@ -61,19 +79,25 @@ export function Experience() {
             </div>
             <div className="flex flex-col pb-4 pt-1">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
-                <h3 className="text-xl font-semibold text-white">Frontend Developer</h3>
+                <h3 className="text-xl font-semibold text-white">
+                  Frontend Developer
+                </h3>
                 <span className="text-sm font-medium text-zinc-400 px-3 py-1 rounded-full bg-card-dark border border-border-dark w-fit">
                   2017 - 2019
                 </span>
               </div>
-              <p className="text-zinc-400 text-base mt-2 leading-relaxed">StartUp Hub</p>
+              <p className="text-zinc-400 text-base mt-2 leading-relaxed">
+                StartUp Hub
+              </p>
               <p className="text-slate-400 mt-4 leading-relaxed max-w-2xl">
-                Developed responsive landing pages and dashboards. Optimized website performance and improved SEO rankings. Worked with Vue.js and classic LAMP stack.
+                Developed responsive landing pages and dashboards. Optimized
+                website performance and improved SEO rankings. Worked with
+                Vue.js and classic LAMP stack.
               </p>
             </div>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
