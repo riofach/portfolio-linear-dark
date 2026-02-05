@@ -37,5 +37,5 @@ None
 
 ## Session Continuity
 Last session: 2026-02-05
-Stopped at: Completed 02-02-PLAN.md
-Resume file: None
+Stopped at: Checkpoint in 02-05-PLAN.md
+Resume file: .planning/RESUME.json
