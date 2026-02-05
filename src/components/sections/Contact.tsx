@@ -2,7 +2,7 @@ import { Mail, MapPin, Rocket, Send } from 'lucide-react';
 
 export function Contact() {
   return (
-    <section id="contact" className="w-full max-w-[960px] px-4 md:px-8 py-20 mx-auto">
+    <section id="contact" className="w-full max-w-7xl px-6 lg:px-8 py-20 mx-auto">
       <div className="grid md:grid-cols-2 gap-12 md:gap-24">
         <div className="flex flex-col justify-between">
           <div>
