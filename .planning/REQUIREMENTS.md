@@ -50,22 +50,22 @@
 ## Traceability
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| ARCH-01 | - | Pending |
-| ARCH-02 | - | Pending |
-| ARCH-03 | - | Pending |
-| ARCH-04 | - | Pending |
-| NAV-01 | - | Pending |
-| NAV-02 | - | Pending |
-| NAV-03 | - | Pending |
-| SEC-01 | - | Pending |
-| MOT-01 | - | Pending |
-| SEC-02 | - | Pending |
-| MOT-02 | - | Pending |
-| SEC-03 | - | Pending |
-| MOT-03 | - | Pending |
-| SEC-04 | - | Pending |
-| MOT-04 | - | Pending |
-| SEC-05 | - | Pending |
-| MOT-05 | - | Pending |
-| SEC-06 | - | Pending |
-| SEC-07 | - | Pending |
+| ARCH-01 | Phase 1 | Pending |
+| ARCH-02 | Phase 1 | Pending |
+| ARCH-03 | Phase 1 | Pending |
+| ARCH-04 | Phase 1 | Pending |
+| NAV-01 | Phase 1 | Pending |
+| NAV-02 | Phase 1 | Pending |
+| NAV-03 | Phase 1 | Pending |
+| SEC-01 | Phase 2 | Pending |
+| MOT-01 | Phase 3 | Pending |
+| SEC-02 | Phase 2 | Pending |
+| MOT-02 | Phase 3 | Pending |
+| SEC-03 | Phase 2 | Pending |
+| MOT-03 | Phase 3 | Pending |
+| SEC-04 | Phase 2 | Pending |
+| MOT-04 | Phase 3 | Pending |
+| SEC-05 | Phase 2 | Pending |
+| MOT-05 | Phase 3 | Pending |
+| SEC-06 | Phase 2 | Pending |
+| SEC-07 | Phase 2 | Pending |
