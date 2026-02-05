@@ -8,9 +8,7 @@ import { Contact } from "@/components/sections/Contact";
 export default function Home() {
   return (
     <div className="flex flex-col w-full">
-      <div id="home">
-        <Hero />
-      </div>
+      <Hero />
       <About />
       <Skills />
       <Projects />
