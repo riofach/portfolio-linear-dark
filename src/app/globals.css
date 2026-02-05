@@ -37,4 +37,13 @@
       rgba(22, 16, 34, 0) 50%
     );
   }
+
+  .tech-icon-glow {
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.15));
+    transition: filter 0.3s ease;
+  }
+
+  .group:hover .tech-icon-glow {
+    filter: drop-shadow(0 0 8px rgba(91, 19, 236, 0.4));
+  }
 }
