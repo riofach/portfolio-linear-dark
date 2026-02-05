@@ -3,14 +3,18 @@
 import { motion, useScroll, useMotionValueEvent, useSpring } from "motion/react"
 import { useState } from "react"
 
+import { NavLinks } from "./NavLinks"
+
 export function Header() {
   const { scrollYProgress, scrollY } = useScroll()
   const [hidden, setHidden] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0
     if (latest > previous && latest > 150) {
       setHidden(true)
+      setMobileMenuOpen(false) // Close mobile menu on scroll down
     } else {
       setHidden(false)
     }
@@ -38,9 +42,9 @@ export function Header() {
           Portfolio
         </div>
 
-        {/* Desktop Nav Links Placeholder */}
+        {/* Desktop Nav Links */}
         <nav className="hidden md:flex gap-6 relative z-10">
-          {/* Links will go here */}
+          <NavLinks />
         </nav>
       </div>
       
