@@ -39,6 +39,14 @@ Plans:
 **Goal:** Build all page sections with static or config-driven content to establish visual hierarchy.
 
 **Dependencies:** Phase 1
+**Plans:** 5 plans
+
+Plans:
+- [ ] 02-01-PLAN.md — Hero Section (3D Grid)
+- [ ] 02-02-PLAN.md — About & Skills (Data-driven Grid)
+- [ ] 02-03-PLAN.md — Projects & Experience (Timeline & Cards)
+- [ ] 02-04-PLAN.md — Contact & Footer (Visuals)
+- [ ] 02-05-PLAN.md — Page Composition (Assembly & Responsive Check)
 
 | Requirement | Description |
 |-------------|-------------|
@@ -82,5 +90,5 @@ Plans:
 | Phase | Status |
 |-------|--------|
 | **1. Foundation & Navigation** | **Complete** |
-| 2. Content Structure & Layout | Planned |
+| 2. Content Structure & Layout | **Planned** |
 | 3. Motion & Interactions | Pending |
