@@ -1,0 +1,896 @@
+<!doctype html>
+<html class="dark" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Fullstack &amp; UI/UX Portfolio Home</title>
+		<link href="https://fonts.googleapis.com" rel="preconnect" />
+		<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<script id="tailwind-config">
+			tailwind.config = {
+				darkMode: 'class',
+				theme: {
+					extend: {
+						colors: {
+							primary: '#5b13ec',
+							'background-light': '#f6f6f8',
+							'background-dark': '#0F1117',
+							'card-dark': '#16181D',
+							'border-dark': '#1E2029',
+						},
+						fontFamily: {
+							display: ['Inter', 'sans-serif'],
+						},
+						borderRadius: {
+							DEFAULT: '0.25rem',
+							lg: '0.5rem',
+							xl: '0.75rem',
+							'2xl': '1rem',
+							full: '9999px',
+						},
+						backgroundImage: {
+							'grid-pattern':
+								'linear-gradient(to right, #1E2029 1px, transparent 1px), linear-gradient(to bottom, #1E2029 1px, transparent 1px)',
+						},
+					},
+				},
+			};
+		</script>
+		<style>
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+			::-webkit-scrollbar-track {
+				background: #0f1117;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #2e2839;
+				border-radius: 4px;
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background: #5b13ec;
+			}
+			.glass-nav {
+				background: rgba(15, 17, 23, 0.7);
+				backdrop-filter: blur(12px);
+				-webkit-backdrop-filter: blur(12px);
+			}
+			.text-glow {
+				text-shadow: 0 0 20px rgba(91, 19, 236, 0.5);
+			}
+			.hero-glow {
+				background: radial-gradient(
+					circle at 50% 50%,
+					rgba(91, 19, 236, 0.15) 0%,
+					rgba(22, 16, 34, 0) 50%
+				);
+			}
+			.tech-icon-glow {
+				filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.15));
+				transition: filter 0.3s ease;
+			}
+			.group:hover .tech-icon-glow {
+				filter: drop-shadow(0 0 8px rgba(91, 19, 236, 0.4));
+			}
+		</style>
+	</head>
+	<body
+		class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden selection:bg-primary selection:text-white"
+	>
+		<div class="relative flex min-h-screen flex-col">
+			<header class="sticky top-0 z-50 w-full border-b border-border-dark glass-nav">
+				<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
+					<div class="flex items-center gap-2">
+						<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+							<span class="material-symbols-outlined text-xl">terminal</span>
+						</div>
+						<span class="text-lg font-bold tracking-tight">John Doe</span>
+					</div>
+					<nav class="hidden md:flex items-center gap-8">
+						<a
+							class="text-sm font-medium text-white transition-all hover:text-primary relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-primary after:shadow-[0_0_8px_2px_rgba(91,19,236,0.6)] after:transition-transform"
+							href="#"
+							>Home</a
+						>
+						<a
+							class="text-sm font-medium text-gray-400 transition-colors hover:text-white relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform hover:after:scale-x-100"
+							href="#about"
+							>About</a
+						>
+						<a
+							class="text-sm font-medium text-gray-400 transition-colors hover:text-white relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform hover:after:scale-x-100"
+							href="#work"
+							>Work</a
+						>
+						<a
+							class="text-sm font-medium text-gray-400 transition-colors hover:text-white relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform hover:after:scale-x-100"
+							href="#skills"
+							>Tools</a
+						>
+					</nav>
+					<div class="flex items-center gap-4">
+						<button
+							class="hidden md:flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-white/10 hover:border-white/20"
+						>
+							<span class="material-symbols-outlined text-[18px]">download</span>
+							Resume
+						</button>
+						<button class="md:hidden p-2 text-white">
+							<span class="material-symbols-outlined">menu</span>
+						</button>
+					</div>
+				</div>
+			</header>
+			<main class="flex-grow">
+				<!-- Hero -->
+				<section
+					class="relative flex min-h-[80vh] items-center justify-center overflow-hidden pt-20 pb-20"
+				>
+					<div
+						class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"
+						data-alt="Subtle noise texture overlay"
+					></div>
+					<div
+						class="absolute inset-0 bg-grid-pattern [background-size:40px_40px] opacity-[0.05]"
+						data-alt="Geometric grid pattern background"
+					></div>
+					<div
+						class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-primary/10 blur-[120px]"
+						data-alt="Soft purple glowing orb in center"
+					></div>
+					<div class="relative z-10 mx-auto max-w-5xl px-6 text-center">
+						<div
+							class="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-primary backdrop-blur-sm"
+						>
+							<span class="relative flex h-2 w-2">
+								<span
+									class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+								></span>
+								<span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+							</span>
+							Available for new projects
+						</div>
+						<h1
+							class="mb-8 text-5xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl"
+						>
+							Building digital <br />
+							<span
+								class="bg-gradient-to-r from-white via-white to-gray-500 bg-clip-text text-transparent"
+								>experiences that matter.</span
+							>
+						</h1>
+						<p class="mx-auto mb-10 max-w-2xl text-lg text-gray-400 sm:text-xl leading-relaxed">
+							Fullstack Developer &amp; UI/UX Designer crafting beautiful, functional web
+							applications with a focus on user experience and clean, maintainable code.
+						</p>
+						<div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+							<a
+								class="group flex h-12 min-w-[160px] items-center justify-center gap-2 rounded-lg bg-primary px-6 text-base font-bold text-white transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(91,19,236,0.5)]"
+								href="#work"
+							>
+								View My Work
+								<span
+									class="material-symbols-outlined transition-transform group-hover:translate-x-1 text-sm"
+									>arrow_forward</span
+								>
+							</a>
+							<a
+								class="flex h-12 min-w-[160px] items-center justify-center gap-2 rounded-lg border border-white/10 bg-white/5 px-6 text-base font-bold text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/20"
+								href="#contact"
+							>
+								Contact Me
+							</a>
+						</div>
+					</div>
+				</section>
+				<!-- About Section -->
+				<section class="relative py-24 px-6 lg:px-8 border-b border-white/5" id="about">
+					<div class="mx-auto max-w-7xl">
+						<div class="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20 items-center">
+							<div class="order-2 lg:order-1">
+								<div
+									class="mb-6 inline-flex items-center gap-2 rounded-md border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-primary uppercase tracking-wider"
+								>
+									About Me
+								</div>
+								<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
+									Crafting interfaces with <span class="text-primary">precision</span> and
+									<span class="text-primary">passion</span>.
+								</h2>
+								<div class="space-y-6 text-lg text-gray-400 leading-relaxed">
+									<p>
+										I'm a multidisciplinary developer and designer with over 5 years of experience
+										in shipping digital products. My journey began with a curiosity for how things
+										work on the web, which quickly evolved into a career obsession with creating
+										pixel-perfect user experiences.
+									</p>
+									<p>
+										I specialize in bridging the gap between design and engineering. Whether it's
+										architecting a scalable backend or fine-tuning interaction animations, I bring a
+										holistic approach to every project. I believe the best products are built when
+										form and function work in perfect harmony.
+									</p>
+									<p>
+										When I'm not coding, you can find me exploring new coffee shops, contributing to
+										open-source, or hiking the nearest trails.
+									</p>
+								</div>
+								<div class="mt-8 flex flex-wrap gap-4">
+									<div class="flex items-center gap-2 text-sm text-gray-300">
+										<span class="material-symbols-outlined text-primary">location_on</span>
+										San Francisco, CA
+									</div>
+									<div class="flex items-center gap-2 text-sm text-gray-300">
+										<span class="material-symbols-outlined text-primary">translate</span>
+										English, Spanish
+									</div>
+									<div class="flex items-center gap-2 text-sm text-gray-300">
+										<span class="material-symbols-outlined text-primary">school</span>
+										B.S. Computer Science
+									</div>
+								</div>
+							</div>
+							<div class="order-1 lg:order-2 flex justify-center lg:justify-end">
+								<div class="relative group max-w-md w-full">
+									<div
+										class="absolute -inset-1 bg-gradient-to-r from-primary to-purple-800 rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition duration-500"
+									></div>
+									<div
+										class="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/10 bg-card-dark shadow-2xl"
+									>
+										<div
+											class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent z-10 mix-blend-overlay"
+										></div>
+										<img
+											alt="John Doe Profile Portrait"
+											class="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105 filter grayscale hover:grayscale-0"
+											src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnXTqJML6tfOcqTCf5N-XNmIvNQdh0cwxL_geRt0LZdRjdhfBM6WXLU444U3ys_4G1RQSjcNo5pt23vkjG2ubF8bwlrzjmVH8I0yfmFQJSQdACm2Ov0gDhYemynIsyLxhoLq4NFlkq6iG6fn09g6fhM-w8-dxgcamIhG6qJN0B7ZOL6o8a36QbbthjHiBGDcDBdheiyZCq49qw28Wg_BfiVXnvEsYkM9XFQb2GlduXiSadxxS9h-Ajll4dh57DcgFgUPA7pMqCikw"
+										/>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- Skills Section -->
+				<section
+					class="relative py-24 px-6 lg:px-8 border-b border-white/5 bg-background-dark/50"
+					id="skills"
+				>
+					<div class="mx-auto max-w-7xl">
+						<div class="mb-12">
+							<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+								Expertise &amp; Tools
+							</h2>
+							<p class="mt-4 text-gray-400 max-w-xl">
+								My preferred stack for building scalable, high-performance applications.
+							</p>
+						</div>
+						<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+							<div
+								class="group flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+							>
+								<div
+									class="h-10 w-10 text-white group-hover:text-[#61DAFB] transition-colors tech-icon-glow"
+								>
+									<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+										<path
+											d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2.22c1.78 0 3.376.657 4.625 1.737-1.144-.14-2.32-.22-3.52-.22H11.9c-1.2 0-2.376.08-3.52.22C9.624 2.877 11.22 2.22 12 2.22zm-1.095 2.518c.36-.016.726-.025 1.095-.025s.735.01 1.095.025c1.455 1.413 2.375 3.327 2.628 5.39H8.277c.253-2.063 1.173-3.977 2.628-5.39zM8.11 5.92c-.89.65-1.68 1.45-2.32 2.345 1.547.64 3.23 1.015 4.996 1.066V9.33H13.21v.002c1.765-.05 3.45-.426 4.996-1.066-.64-.895-1.43-1.695-2.32-2.346-1.01.784-2.185 1.34-3.447 1.62-.143-.01-.286-.023-.43-.03-.143.007-.287.02-.43.03-1.263-.28-2.437-.836-3.447-1.62h-.022zM2.844 8.78c1.383-1.424 3.193-2.33 5.184-2.585-.884 1.583-1.412 3.38-1.54 5.253H2.234c.05-1.013.26-1.98.61-2.668zm11.972 2.668c-.128-1.873-.656-3.67-1.54-5.253 1.99.255 3.8 1.16 5.184 2.585.35.688.56 1.655.61 2.668h-4.254zM7.065 13.25c.348 1.585 1.05 3.06 2.025 4.312-1.74-.05-3.4-.42-4.922-1.05.626-.88 1.405-1.664 2.28-2.308.204.364.41.713.617 1.046zm.61-1.046c-.206.332-.413.682-.617 1.046-.875-.644-1.654-1.428-2.28-2.308 1.522-.63 3.182-1.002 4.922-1.05-.975 1.252-1.677 2.727-2.025 4.312h.001zm9.262 0c-.347-1.585-1.05-3.06-2.024-4.312 1.74.05 3.4.42 4.92 1.05-.626.88-1.405 1.664-2.28 2.308-.204-.364-.41-.713-.616-1.046zm-.615 1.046c.205-.333.412-.683.616-1.046.875.644 1.654 1.428 2.28 2.308-1.52.63-3.18 1.002-4.92 1.05.974-1.252 1.677-2.727 2.024-4.312h.001zM10.905 19.262c-.36.015-.726.024-1.095.024s-.735-.01-1.095-.024c-1.455-1.414-2.375-3.328-2.628-5.39h6.446c-.253 2.062-1.173 3.976-2.628 5.39zm3.504-2.756c1.01-.784 2.184-1.34 3.447-1.62.143.01.287.022.43.03.144-.007.287-.02.43-.03 1.263.28 2.437.836 3.447 1.62-.89.652-1.68 1.452-2.32 2.347-1.547-.64-3.23-1.016-4.996-1.066v-.003c-.144.02-.29.04-.438.06v-.275h.001zm-4.818 0v.275c-.148-.02-.294-.04-.438-.06v.003c-1.765.05-3.45.426-4.996 1.066.64.895 1.43 1.695 2.32 2.347 1.01-.784 2.185-1.34 3.447-1.62.143-.01.286-.022.43-.03.143.007.287.02.43.03zm2.41 5.274c1.2 0 2.376-.08 3.52-.22-.797 1.057-2.393 1.714-4.173 1.714-1.78 0-3.376-.657-4.625-1.737 1.144.14 2.32.22 3.52.22h1.758z"
+										></path>
+									</svg>
+								</div>
+								<span class="text-sm font-medium text-gray-300 group-hover:text-white"
+									>React JS</span
+								>
+							</div>
+							<div
+								class="group flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+							>
+								<div class="h-10 w-10 text-white transition-colors tech-icon-glow">
+									<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+										<path
+											d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.523 0 10 4.477 10 10 0 1.94-.555 3.75-1.516 5.29L19 15.345V7h-2v11.777L9.07 7.086C9.976 6.386 10.957 6 12 6zm-5.464 2.876L15.31 17.65c-1.02.7-2.22 1.15-3.31 1.15-5.523 0-10-4.477-10-10 0-2.3.67-4.43 1.83-6.223l2.705 4.3z"
+										></path>
+									</svg>
+								</div>
+								<span class="text-sm font-medium text-gray-300 group-hover:text-white"
+									>Next.js</span
+								>
+							</div>
+							<div
+								class="group flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+							>
+								<div
+									class="h-10 w-10 text-white group-hover:text-[#3178C6] transition-colors tech-icon-glow"
+								>
+									<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+										<path
+											d="M1.125 0C.502 0 0 .502 0 1.125v21.75C0 23.498.502 24 1.125 24h21.75c.623 0 1.125-.502 1.125-1.125V1.125C24 .502 23.498 0 22.875 0H1.125zM12.92 11.232h4.526v1.31h-1.636v6.92h-1.253v-6.92h-1.637v-1.31zm-6.155 3.42c0 .73.18 1.157.65 1.348.513.208 1.196.126 1.706-.118.57-.272.936-.78 1.11-1.353h1.22c-.184 1.258-1.06 2.128-2.31 2.373-1.02.2-2.115-.054-2.8-.78-.71-.75-.85-1.956-.052-2.89.176-.206.39-.38.63-.516.716-.407 1.636-.457 2.45-.198.81.256 1.487.903 1.733 1.703h-1.25c-.156-.474-.537-.81-1.036-.88-.475-.067-.925.12-1.168.513-.217.35-.25.78-.083 1.144z"
+										></path>
+									</svg>
+								</div>
+								<span class="text-sm font-medium text-gray-300 group-hover:text-white"
+									>TypeScript</span
+								>
+							</div>
+							<div
+								class="group flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+							>
+								<div
+									class="h-10 w-10 text-white group-hover:text-[#38B2AC] transition-colors tech-icon-glow"
+								>
+									<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+										<path
+											d="M12.001,4.8c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 C13.666,10.618,15.027,12,18.001,12c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C16.337,6.182,14.976,4.8,12.001,4.8z M6.001,12c-3.2,0-5.2,1.6-6,4.8c1.2-1.6,2.6-2.2,4.2-1.8c0.913,0.228,1.565,0.89,2.288,1.624 c1.177,1.194,2.538,2.576,5.512,2.576c3.2,0,5.2-1.6,6-4.8c-1.2,1.6-2.6,2.2-4.2,1.8c-0.913-0.228-1.565-0.89-2.288-1.624 C10.337,13.382,8.976,12,6.001,12z"
+										></path>
+									</svg>
+								</div>
+								<span class="text-sm font-medium text-gray-300 group-hover:text-white"
+									>Tailwind</span
+								>
+							</div>
+							<div
+								class="group flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+							>
+								<div
+									class="h-10 w-10 text-white group-hover:text-[#68A063] transition-colors tech-icon-glow"
+								>
+									<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+										<path
+											d="M12,2C6.477,2,2,6.477,2,12s4.477,10,10,10s10-4.477,10-10S17.523,2,12,2z M16.711,10.871l-4.482,2.61 c-0.141,0.082-0.316,0.082-0.458,0l-4.482-2.61c-0.143-0.083-0.231-0.237-0.231-0.403v-5.22c0-0.166,0.088-0.32,0.231-0.403 l4.482-2.611c0.141-0.082,0.317-0.082,0.458,0l4.482,2.611c0.143,0.083,0.231,0.237,0.231,0.403v5.22 C16.942,10.634,16.854,10.788,16.711,10.871z"
+										></path>
+									</svg>
+								</div>
+								<span class="text-sm font-medium text-gray-300 group-hover:text-white"
+									>Node.js</span
+								>
+							</div>
+							<div
+								class="group flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+							>
+								<div
+									class="h-10 w-10 text-white group-hover:text-[#336791] transition-colors tech-icon-glow"
+								>
+									<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+										<path
+											d="M12,2C6.477,2,2,6.477,2,12s4.477,10,10,10s10-4.477,10-10S17.523,2,12,2z M12.8,16.4c-0.3,0-0.6-0.1-0.8-0.3 c-0.1-0.1-0.1-0.2-0.1-0.3c0-0.1,0-0.2,0.1-0.3c0.2-0.2,0.5-0.2,0.8-0.2c0.3,0,0.6,0.1,0.8,0.3c0.1,0.1,0.1,0.2,0.1,0.3 s0,0.2-0.1,0.3C13.4,16.3,13.1,16.4,12.8,16.4z M15,14.6c-0.2,0.2-0.5,0.4-0.8,0.5c-0.3,0.1-0.7,0.2-1.1,0.2 c-0.5,0-0.9-0.1-1.3-0.3c-0.3-0.2-0.5-0.4-0.6-0.8c-0.1-0.3-0.1-0.7-0.1-1.1c0-0.4,0.1-0.8,0.3-1.1c0.2-0.3,0.5-0.6,0.9-0.7 c0.4-0.2,0.8-0.2,1.3-0.2c0.4,0,0.8,0.1,1.1,0.2c0.3,0.2,0.5,0.4,0.7,0.7c0.1,0.3,0.2,0.6,0.2,1C15.5,13.6,15.3,14.2,15,14.6z"
+										></path>
+									</svg>
+								</div>
+								<span class="text-sm font-medium text-gray-300 group-hover:text-white"
+									>PostgreSQL</span
+								>
+							</div>
+							<div
+								class="group flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+							>
+								<div
+									class="h-10 w-10 text-white group-hover:text-[#F24E1E] transition-colors tech-icon-glow"
+								>
+									<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+										<path
+											d="M12,2C6.477,2,2,6.477,2,12c0,5.523,4.477,10,10,10s10-4.477,10-10C22,6.477,17.523,2,12,2z M8.5,12 c-0.828,0-1.5-0.672-1.5-1.5s0.672-1.5,1.5-1.5s1.5,0.672,1.5,1.5S9.328,12,8.5,12z M8.5,17c-0.828,0-1.5-0.672-1.5-1.5 s0.672-1.5,1.5-1.5s1.5,0.672,1.5,1.5S9.328,17,8.5,17z M12,17c-0.828,0-1.5-0.672-1.5-1.5v-2.5h1.5c0.828,0,1.5,0.672,1.5,1.5 S12.828,17,12,17z M15.5,12h-1.5v-2.5h1.5c0.828,0,1.5,0.672,1.5,1.5S16.328,12,15.5,12z"
+										></path>
+									</svg>
+								</div>
+								<span class="text-sm font-medium text-gray-300 group-hover:text-white">Figma</span>
+							</div>
+							<div
+								class="group flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+							>
+								<div
+									class="h-10 w-10 text-white group-hover:text-[#007ACC] transition-colors tech-icon-glow"
+								>
+									<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+										<path
+											d="M23.15 2.587L18.21.21a1.494 1.494 0 0 0-1.705.29l-9.46 8.63-4.12-3.128a.999.999 0 0 0-1.245.09L1.112 6.66a.53.53 0 0 0 .426.96l6.715 3.129-6.716 3.129a.53.53 0 0 0-.426.96L1.68 17.9a.999.999 0 0 0 1.245.09l4.12-3.128 9.46 8.63a1.492 1.492 0 0 0 1.704.29l4.94-2.377A1.5 1.5 0 0 0 24 20.065V3.934a1.5 1.5 0 0 0-.85-1.347z"
+										></path>
+									</svg>
+								</div>
+								<span class="text-sm font-medium text-gray-300 group-hover:text-white"
+									>VS Code</span
+								>
+							</div>
+							<div
+								class="group flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+							>
+								<div
+									class="h-10 w-10 text-white group-hover:text-[#F05032] transition-colors tech-icon-glow"
+								>
+									<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+										<path
+											d="M23.546 10.93L13.067.452c-.604-.603-1.582-.603-2.188 0L8.708 2.627l2.76 2.76c.645-.215 1.379-.07 1.889.441.516.515.658 1.258.438 1.9l2.652 2.66c.645-.223 1.387-.078 1.9.435.721.72.721 1.884 0 2.604-.719.719-1.881.719-2.6 0-.539-.541-.674-1.337-.404-1.996L12.86 8.955v6.525c.176.086.342.203.488.348.713.721.713 1.883 0 2.6-.719.721-1.889.721-2.609 0-.719-.719-.719-1.879 0-2.598.182-.18.387-.316.605-.406V8.835c-.217-.091-.424-.222-.6-.401-.54-.539-.69-1.35-.391-2.014L7.9 3.436 2.296 9.041c-.603.603-.603 1.582 0 2.188l10.48 10.477c.604.604 1.582.604 2.186 0l8.584-8.586c.605-.605.605-1.586.002-2.19z"
+										></path>
+									</svg>
+								</div>
+								<span class="text-sm font-medium text-gray-300 group-hover:text-white">Git</span>
+							</div>
+							<div
+								class="group flex flex-col items-center justify-center gap-3 rounded-xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:bg-white/[0.05] hover:border-white/20 hover:-translate-y-1"
+							>
+								<div
+									class="h-10 w-10 text-white group-hover:text-[#FF0000] transition-colors tech-icon-glow"
+								>
+									<svg class="w-full h-full" fill="currentColor" viewBox="0 0 24 24">
+										<path
+											d="M15.1,2H22v19.766h-6.914L15.1,2z M8.905,2H2v19.766h6.905L8.905,2z M12.871,10.992L10.363,2h2.202 l1.071,4.402L15.545,2h2.247l-4.921,17.469h-1.983L12.871,10.992z"
+										></path>
+									</svg>
+								</div>
+								<span class="text-sm font-medium text-gray-300 group-hover:text-white"
+									>Adobe CC</span
+								>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- Work Section -->
+				<section class="py-24 px-6 lg:px-8" id="work">
+					<div class="mx-auto max-w-7xl">
+						<div
+							class="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border-dark pb-8"
+						>
+							<div>
+								<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+									Selected Work
+								</h2>
+								<p class="mt-4 text-gray-400 max-w-xl">
+									A curated list of projects that demonstrate my ability to bridge the gap between
+									design and engineering.
+								</p>
+							</div>
+							<a
+								class="group flex items-center gap-1 text-sm font-medium text-primary hover:text-white transition-colors"
+								href="#"
+							>
+								View all projects
+								<span
+									class="material-symbols-outlined text-lg transition-transform group-hover:translate-x-1"
+									>arrow_right_alt</span
+								>
+							</a>
+						</div>
+						<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+							<div
+								class="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+							>
+								<div class="aspect-video w-full overflow-hidden bg-gray-900 relative">
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"
+									></div>
+									<div
+										class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+										data-alt="Dashboard interface with data visualization charts"
+										style="
+											background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrYuG7lmS1K0jJVvUmEs9X3jf7z8BIJBziYsYRn38eQGLXN5blpfdAqsB0HCyf2BWm7LNxavbf_ZQQGqjjrYV4RSB34-UWsrtk8Vf0HsQSnbPYQNvQZ449EVUBooz6EL30-cj7g3rjthn8t8U0Uchp7n9Z8Bnqm3vsATeAcZ-wlEKgOaxAvMNBzNQUKJSabk2yUNlGcKPtIFLS05yqDPR3BuqJxLf4ocn_ufpTvtwZTjFUgxnWXZbLGJru3ukl3DbnzQOnynMWYj0');
+										"
+									></div>
+								</div>
+								<div class="relative z-20 -mt-12 p-8 pt-0">
+									<div class="mb-4 flex gap-2">
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>React</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Tailwind</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Node.js</span
+										>
+									</div>
+									<h3
+										class="text-2xl font-bold text-white group-hover:text-primary transition-colors"
+									>
+										E-commerce Analytics Dashboard
+									</h3>
+									<p class="mt-2 text-gray-400">
+										A comprehensive analytics platform for online retailers, featuring real-time
+										data visualization and inventory management.
+									</p>
+									<div class="mt-6 flex items-center gap-4">
+										<button
+											class="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1"
+										>
+											Case Study
+											<span class="material-symbols-outlined text-sm">arrow_outward</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div
+								class="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+							>
+								<div class="aspect-video w-full overflow-hidden bg-gray-900 relative">
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"
+									></div>
+									<div
+										class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+										data-alt="Mobile banking application interface on a phone screen"
+										style="
+											background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUkuIrOtYT5ddkCUT7vgZkJ1SDURC1jCdlWliqnUON-i7D5ZlmvRK6p2KKUhc6FWQfy1LlAtN7iTWTHC5F3C9P_3h9Yuf_eYy_UATEBqppUH36BcPLHRBlhQuJDGBS9I0d5aCZET-xTFMnWSh11ozKfyggnJfJHT_5CL43LQqWH_6LWOfyTK1G47wXFsgrUgHqczW_jeOdzBSMpkCf10PAjM-cP-UI6WyUTRdl_CQyorjHVaC2LUUEyZSuh3o588qJjSH3PeSEPow');
+										"
+									></div>
+								</div>
+								<div class="relative z-20 -mt-12 p-8 pt-0">
+									<div class="mb-4 flex gap-2">
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>iOS</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>SwiftUI</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Figma</span
+										>
+									</div>
+									<h3
+										class="text-2xl font-bold text-white group-hover:text-primary transition-colors"
+									>
+										NeoBank Mobile App
+									</h3>
+									<p class="mt-2 text-gray-400">
+										A modern fintech mobile application focused on simplifying personal finance for
+										Gen Z users.
+									</p>
+									<div class="mt-6 flex items-center gap-4">
+										<button
+											class="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1"
+										>
+											Case Study
+											<span class="material-symbols-outlined text-sm">arrow_outward</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div
+								class="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+							>
+								<div class="aspect-video w-full overflow-hidden bg-gray-900 relative">
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"
+									></div>
+									<div
+										class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+										data-alt="Travel website landing page with scenic landscape"
+										style="
+											background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMpgKHxr1YS0o7tpoqdubRez4WeppIUQVhlhvRaU6LDKVNypCZWT7M5U4ParS-P6IURbLbFX6CS3ff0MFbJMGBmR82M_IGHaNjnuF6OByAAU6LBHxWXrIssijWzQR7g86iDxrvOjPH_g-GnstXpHC2ooI1Lt-DhgvPvJHatrDUguwG3m8pTEFQwqsr6mv55FMP_kPRRjRY8QYWDR4XcowHhykeSqK8Sixihtab4ewHU6dV02g7cb152xyCUp0WVk56hSMpX03oIC4');
+										"
+									></div>
+								</div>
+								<div class="relative z-20 -mt-12 p-8 pt-0">
+									<div class="mb-4 flex gap-2">
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Next.js</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Supabase</span
+										>
+									</div>
+									<h3
+										class="text-2xl font-bold text-white group-hover:text-primary transition-colors"
+									>
+										Wanderlust Travel Platform
+									</h3>
+									<p class="mt-2 text-gray-400">
+										A comprehensive booking engine allowing users to create custom travel
+										itineraries with AI assistance.
+									</p>
+									<div class="mt-6 flex items-center gap-4">
+										<button
+											class="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1"
+										>
+											Case Study
+											<span class="material-symbols-outlined text-sm">arrow_outward</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div
+								class="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+							>
+								<div class="aspect-video w-full overflow-hidden bg-gray-900 relative">
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"
+									></div>
+									<div
+										class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+										data-alt="Abstract AI generated artwork representing content generation"
+										style="
+											background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwQwfJq3QA3xpmfQuqb2QogwEZHr-fmXykYnNQTcsZmuQn5br_PjzUwqBSw3YDu8NZk_rfUdo266ygualBCAMNvzoT53m3gJqezpiy6FvcZjidnafI8LSJnMwhEDe6ai0xmoGzwaRVAJPzT0zHsgyOIfmj6pG-iNTQMCmKKgMctpy1AzojX0WlW-F6H2wBEjhP0g_ggAA32jfxTkNXa7LZnJE6Cg7z7LCJ5eYkm3n0iB7snvOWdOcoYIceYXF3koIm-86hzmTW4zg');
+										"
+									></div>
+								</div>
+								<div class="relative z-20 -mt-12 p-8 pt-0">
+									<div class="mb-4 flex gap-2">
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Python</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>OpenAI</span
+										>
+									</div>
+									<h3
+										class="text-2xl font-bold text-white group-hover:text-primary transition-colors"
+									>
+										CopyGen AI
+									</h3>
+									<p class="mt-2 text-gray-400">
+										An intelligent content generation tool helping marketers create SEO-optimized
+										blog posts in minutes.
+									</p>
+									<div class="mt-6 flex items-center gap-4">
+										<button
+											class="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1"
+										>
+											Case Study
+											<span class="material-symbols-outlined text-sm">arrow_outward</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<!-- Experience Section -->
+				<div class="layout-container flex flex-col items-center w-full">
+					<section class="w-full max-w-[960px] px-4 md:px-8 py-16">
+						<div class="flex flex-col gap-8">
+							<div class="flex flex-col gap-2">
+								<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Experience</h2>
+								<p class="text-text-secondary text-lg">My professional journey and milestones.</p>
+							</div>
+							<div class="mt-8 grid grid-cols-[48px_1fr] gap-x-4 md:gap-x-8">
+								<!-- Timeline Item 1 -->
+								<div class="flex flex-col items-center pt-2">
+									<div
+										class="flex h-12 w-12 items-center justify-center rounded-full bg-surface-dark border border-border-dark text-primary shadow-[0_0_15px_rgba(91,19,236,0.15)]"
+									>
+										<span class="material-symbols-outlined text-[24px]">terminal</span>
+									</div>
+									<div class="h-full w-[1px] bg-border-dark my-2 relative overflow-hidden">
+										<div
+											class="absolute inset-0 bg-gradient-to-b from-primary/50 to-transparent w-full h-1/2"
+										></div>
+									</div>
+								</div>
+								<div class="flex flex-col pb-12 pt-1">
+									<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+										<h3 class="text-xl font-semibold text-white">Senior Fullstack Developer</h3>
+										<span
+											class="text-sm font-medium text-primary px-3 py-1 rounded-full bg-primary/10 border border-primary/20 w-fit"
+											>2021 - Present</span
+										>
+									</div>
+									<p class="text-text-secondary text-base mt-2 leading-relaxed">TechCorp Inc.</p>
+									<p class="text-slate-400 mt-4 leading-relaxed max-w-2xl">
+										Leading the frontend migration to React 18 and Next.js. Architecting scalable
+										microservices using Node.js and gRPC. Mentoring a squad of 5 junior developers
+										and implementing CI/CD best practices.
+									</p>
+								</div>
+								<!-- Timeline Item 2 -->
+								<div class="flex flex-col items-center">
+									<div
+										class="flex h-12 w-12 items-center justify-center rounded-full bg-surface-dark border border-border-dark text-white"
+									>
+										<span class="material-symbols-outlined text-[24px]">design_services</span>
+									</div>
+									<div class="h-full w-[1px] bg-border-dark my-2"></div>
+								</div>
+								<div class="flex flex-col pb-12 pt-1">
+									<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+										<h3 class="text-xl font-semibold text-white">UI/UX Designer</h3>
+										<span
+											class="text-sm font-medium text-text-secondary px-3 py-1 rounded-full bg-surface-dark border border-border-dark w-fit"
+											>2019 - 2021</span
+										>
+									</div>
+									<p class="text-text-secondary text-base mt-2 leading-relaxed">Creative Studio</p>
+									<p class="text-slate-400 mt-4 leading-relaxed max-w-2xl">
+										Designed user-centric interfaces for mobile and web applications. Conducted user
+										research, wireframing, and prototyping in Figma. Collaborated closely with
+										developers to ensure design fidelity.
+									</p>
+								</div>
+								<!-- Timeline Item 3 -->
+								<div class="flex flex-col items-center">
+									<div
+										class="flex h-12 w-12 items-center justify-center rounded-full bg-surface-dark border border-border-dark text-white"
+									>
+										<span class="material-symbols-outlined text-[24px]">code</span>
+									</div>
+								</div>
+								<div class="flex flex-col pb-4 pt-1">
+									<div class="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
+										<h3 class="text-xl font-semibold text-white">Frontend Developer</h3>
+										<span
+											class="text-sm font-medium text-text-secondary px-3 py-1 rounded-full bg-surface-dark border border-border-dark w-fit"
+											>2017 - 2019</span
+										>
+									</div>
+									<p class="text-text-secondary text-base mt-2 leading-relaxed">StartUp Hub</p>
+									<p class="text-slate-400 mt-4 leading-relaxed max-w-2xl">
+										Developed responsive landing pages and dashboards. Optimized website performance
+										and improved SEO rankings. Worked with Vue.js and classic LAMP stack.
+									</p>
+								</div>
+							</div>
+						</div>
+					</section>
+					<!-- Divider -->
+					<div
+						class="w-full h-px bg-gradient-to-r from-transparent via-border-dark to-transparent max-w-[960px]"
+					></div>
+					<!-- Contact Section -->
+					<section class="w-full max-w-[960px] px-4 md:px-8 py-20">
+						<div class="grid md:grid-cols-2 gap-12 md:gap-24">
+							<div class="flex flex-col justify-between">
+								<div>
+									<h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl mb-6">
+										Let's work together
+									</h2>
+									<p class="text-text-secondary text-lg leading-relaxed mb-8">
+										I'm currently available for new projects. If you have a specific idea in mind or
+										just want to chat about tech, feel free to shoot me a message.
+									</p>
+									<div class="space-y-6">
+										<a
+											class="flex items-center gap-4 text-white hover:text-primary transition-colors group"
+											href="mailto:hello@example.com"
+										>
+											<div
+												class="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-dark border border-border-dark group-hover:border-primary/50 transition-colors"
+											>
+												<span class="material-symbols-outlined">mail</span>
+											</div>
+											<span class="text-lg font-medium">hello@portfolio.dev</span>
+										</a>
+										<div class="flex items-center gap-4 text-white">
+											<div
+												class="flex h-12 w-12 items-center justify-center rounded-lg bg-surface-dark border border-border-dark"
+											>
+												<span class="material-symbols-outlined">location_on</span>
+											</div>
+											<span class="text-lg font-medium">San Francisco, CA</span>
+										</div>
+									</div>
+								</div>
+								<div
+									class="hidden md:block mt-12 p-6 rounded-xl bg-surface-dark border border-border-dark relative overflow-hidden group"
+								>
+									<div
+										class="absolute top-0 right-0 p-4 opacity-20 group-hover:opacity-40 transition-opacity"
+									>
+										<span class="material-symbols-outlined text-6xl rotate-12">rocket_launch</span>
+									</div>
+									<p class="text-sm font-medium text-primary mb-1">Status</p>
+									<div class="flex items-center gap-2">
+										<span class="relative flex h-3 w-3">
+											<span
+												class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"
+											></span>
+											<span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+										</span>
+										<span class="text-white font-medium">Open to offers</span>
+									</div>
+								</div>
+							</div>
+							<!-- Contact Form -->
+							<div
+								class="bg-surface-dark/50 backdrop-blur-sm p-6 md:p-8 rounded-2xl border border-border-dark shadow-xl"
+							>
+								<form class="flex flex-col gap-6">
+									<div class="grid md:grid-cols-2 gap-6">
+										<label class="flex flex-col gap-2">
+											<span class="text-sm font-medium text-text-secondary">Name</span>
+											<input
+												class="w-full rounded-lg bg-background-dark border border-border-dark px-4 py-3 text-white placeholder-text-secondary/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all"
+												placeholder="John Doe"
+												type="text"
+											/>
+										</label>
+										<label class="flex flex-col gap-2">
+											<span class="text-sm font-medium text-text-secondary">Email</span>
+											<input
+												class="w-full rounded-lg bg-background-dark border border-border-dark px-4 py-3 text-white placeholder-text-secondary/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all"
+												placeholder="john@company.com"
+												type="email"
+											/>
+										</label>
+									</div>
+									<label class="flex flex-col gap-2">
+										<span class="text-sm font-medium text-text-secondary">Subject</span>
+										<select
+											class="w-full rounded-lg bg-background-dark border border-border-dark px-4 py-3 text-white focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all appearance-none cursor-pointer"
+										>
+											<option>Project Inquiry</option>
+											<option>Job Opportunity</option>
+											<option>Mentorship</option>
+											<option>Other</option>
+										</select>
+									</label>
+									<label class="flex flex-col gap-2">
+										<span class="text-sm font-medium text-text-secondary">Message</span>
+										<textarea
+											class="w-full resize-none rounded-lg bg-background-dark border border-border-dark px-4 py-3 text-white placeholder-text-secondary/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all"
+											placeholder="Tell me about your project..."
+											rows="4"
+										></textarea>
+									</label>
+									<button
+										class="mt-2 w-full rounded-lg bg-primary hover:bg-primary/90 text-white font-semibold py-4 transition-all hover:scale-[1.01] active:scale-[0.99] flex items-center justify-center gap-2"
+										type="button"
+									>
+										Send Message
+										<span class="material-symbols-outlined text-[20px]">send</span>
+									</button>
+								</form>
+							</div>
+						</div>
+					</section>
+				</div>
+			</main>
+			<!-- Footer -->
+			<footer class="w-full bg-surface-dark border-t border-border-dark py-12">
+				<div class="max-w-[960px] mx-auto px-4 md:px-8">
+					<div class="flex flex-col md:flex-row items-center justify-between gap-8">
+						<div class="flex flex-col items-center md:items-start gap-2">
+							<span class="text-xl font-bold text-white tracking-tight">Portfolio.dev</span>
+							<p class="text-text-secondary text-sm">Building digital experiences that matter.</p>
+						</div>
+						<div class="flex items-center gap-6">
+							<a
+								class="text-text-secondary hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
+								href="#"
+							>
+								<!-- GitHub-ish icon using material symbols as placeholder or direct svg if allowed, using code for dev context -->
+								<span class="material-symbols-outlined">code</span>
+							</a>
+							<a
+								class="text-text-secondary hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
+								href="#"
+							>
+								<span class="material-symbols-outlined">alternate_email</span>
+							</a>
+							<a
+								class="text-text-secondary hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
+								href="#"
+							>
+								<span class="material-symbols-outlined">link</span>
+							</a>
+						</div>
+					</div>
+					<div
+						class="mt-12 flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/5 pt-8"
+					>
+						<p class="text-sm text-text-secondary">© 2024 Portfolio.dev. All rights reserved.</p>
+						<div class="flex items-center gap-6 text-sm text-text-secondary">
+							<a class="hover:text-white transition-colors" href="#">Privacy Policy</a>
+							<a class="hover:text-white transition-colors" href="#">Terms of Service</a>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>
