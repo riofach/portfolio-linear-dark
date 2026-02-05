@@ -28,6 +28,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-zinc-950 text-zinc-100 selection:bg-white/20`}
+        suppressHydrationWarning
       >
         <ReactLenis root>
           <Header />
