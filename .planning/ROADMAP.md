@@ -42,7 +42,7 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
-- [ ] 02-01-PLAN.md — Hero Section (3D Grid)
+- [x] 02-01-PLAN.md — Hero Section (3D Grid)
 - [ ] 02-02-PLAN.md — About & Skills (Data-driven Grid)
 - [ ] 02-03-PLAN.md — Projects & Experience (Timeline & Cards)
 - [ ] 02-04-PLAN.md — Contact & Footer (Visuals)
@@ -90,5 +90,5 @@ Plans:
 | Phase | Status |
 |-------|--------|
 | **1. Foundation & Navigation** | **Complete** |
-| 2. Content Structure & Layout | **Planned** |
+| 2. Content Structure & Layout | **In Progress** |
 | 3. Motion & Interactions | Pending |
