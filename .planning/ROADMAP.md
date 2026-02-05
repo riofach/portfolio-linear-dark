@@ -43,9 +43,9 @@ Plans:
 
 Plans:
 - [x] 02-01-PLAN.md — Hero Section (3D Grid)
-- [ ] 02-02-PLAN.md — About & Skills (Data-driven Grid)
-- [ ] 02-03-PLAN.md — Projects & Experience (Timeline & Cards)
-- [ ] 02-04-PLAN.md — Contact & Footer (Visuals)
+- [x] 02-02-PLAN.md — About & Skills (Data-driven Grid)
+- [x] 02-03-PLAN.md — Projects & Experience (Timeline & Cards)
+- [x] 02-04-PLAN.md — Contact & Footer (Visuals)
 - [ ] 02-05-PLAN.md — Page Composition (Assembly & Responsive Check)
 
 | Requirement | Description |
