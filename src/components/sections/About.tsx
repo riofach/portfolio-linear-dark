@@ -55,7 +55,6 @@ export function About() {
             <div className="relative group max-w-md w-full">
               <div className="absolute -inset-1 bg-gradient-to-r from-primary to-purple-800 rounded-2xl blur-lg opacity-30 group-hover:opacity-60 transition duration-500" />
               <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-white/10 bg-[#16181D] shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent z-10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <Image
                   src="/foto.png"
                   alt="John Doe Profile Portrait"
