@@ -4,12 +4,32 @@ import { useState } from "react"
 import { Terminal, Download } from "lucide-react"
 import { NavLinks } from "./NavLinks"
 import { MobileMenu } from "./MobileMenu"
+import { motion, useScroll, useMotionValueEvent, useTransform } from "framer-motion"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [hidden, setHidden] = useState(false)
+  const { scrollY, scrollYProgress } = useScroll()
+
+  useMotionValueEvent(scrollY, "change", (latest) => {
+    const previous = scrollY.getPrevious() ?? 0
+    if (latest > previous && latest > 150) {
+      setHidden(true)
+    } else {
+      setHidden(false)
+    }
+  })
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/5 glass-nav">
+    <motion.header 
+      variants={{
+        visible: { y: 0 },
+        hidden: { y: "-100%" },
+      }}
+      animate={hidden ? "hidden" : "visible"}
+      transition={{ duration: 0.35, ease: "easeInOut" }}
+      className="sticky top-0 z-50 w-full border-b border-white/5 glass-nav"
+    >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
         <div className="flex items-center gap-2">
@@ -35,6 +55,12 @@ export function Header() {
           <MobileMenu isOpen={mobileMenuOpen} setIsOpen={setMobileMenuOpen} />
         </div>
       </div>
-    </header>
+
+      {/* Scroll Progress Bar */}
+      <motion.div 
+        className="absolute bottom-0 left-0 h-[1px] bg-primary origin-left"
+        style={{ scaleX: scrollYProgress, width: "100%" }}
+      />
+    </motion.header>
   )
 }
