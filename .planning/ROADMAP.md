@@ -11,11 +11,12 @@ This roadmap delivers the Portfolio Linear Dark as a high-performance Single Pag
 ## Phase 1: Foundation & Navigation
 **Goal:** Initialize the project architecture and global navigation shell.
 
-**Plans:** 2 plans
+**Plans:** 3 plans
 
 Plans:
 - [x] 01-01-PLAN.md — Foundation Setup (Tailwind v4, Motion v12, Data Layer)
 - [x] 01-02-PLAN.md — Navigation Shell (Smart Header, Mobile Menu, Scroll Spy)
+- [ ] 01-03-PLAN.md — Fix Font Rendering (Gap Closure)
 
 | Requirement | Description |
 |-------------|-------------|
@@ -80,6 +81,6 @@ Plans:
 
 | Phase | Status |
 |-------|--------|
-| **1. Foundation & Navigation** | **Complete** |
+| **1. Foundation & Navigation** | **In Progress** |
 | 2. Content Structure & Layout | Planned |
 | 3. Motion & Interactions | Pending |
