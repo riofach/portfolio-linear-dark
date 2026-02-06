@@ -74,11 +74,11 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Motion Foundation (Native Scroll, Transitions, Lib)
-- [ ] 03-02-PLAN.md — Hero & Section Reveals (Stagger, Fade Up)
-- [ ] 03-03-PLAN.md — Card Interactions (Skills Glow, Projects Scale)
-- [ ] 03-04-PLAN.md — Contact Form Validation (Zod, RHF, Feedback)
-- [ ] 03-05-PLAN.md — Experience & Final Polish (Timeline, SEO, Audit)
+- [ ] 03-01-PLAN.md — Foundation & Page Transitions (Config, Template)
+- [ ] 03-02-PLAN.md — Section Reveals (Hero Stagger, Scroll Fade-up)
+- [ ] 03-03-PLAN.md — Micro-interactions (Hover Cards, Timeline)
+- [ ] 03-04-PLAN.md — Contact Form Logic (Validation, State)
+- [ ] 03-05-PLAN.md — Final Polish & Performance (SEO, Lighthouse)
 
 | Requirement | Description |
 |-------------|-------------|
@@ -101,4 +101,4 @@ Plans:
 |-------|--------|
 | **1. Foundation & Navigation** | **Complete** |
 | **2. Content Structure & Layout** | **Complete** |
-| 3. Motion & Interactions | **In Progress** |
+| 3. Motion & Interactions | **Ready** |
