@@ -15,12 +15,16 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Rio Raditya - Fullstack Developer & UI/UX Designer",
+  title: "Fachrio Raditya (Rio) - Fullstack Developer & UI/UX Designer",
   description: "Fullstack Developer & UI/UX Designer crafting beautiful, functional web applications with a focus on user experience and clean, maintainable code.",
+  keywords: ["Fachrio Raditya", "Rio Raditya", "Fullstack Developer", "Frontend Engineer", "Portfolio"],
+  alternates: {
+    canonical: "https://rioraditya.click",
+  },
   openGraph: {
     title: "Rio Raditya - Portfolio",
     description: "Building digital experiences that matter. Explore my projects and skills.",
-    url: "https://portfolio-linear-dark.vercel.app",
+    url: "https://rioraditya.click",
     siteName: "Rio Raditya Portfolio",
     images: [
       {
@@ -44,12 +48,32 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Fachrio Raditya",
+    "alternateName": "Rio Raditya",
+    "url": "https://rioraditya.click",
+    "sameAs": [
+      "https://github.com/prioraditya",
+      "https://linkedin.com/in/rioraditya",
+      "https://instagram.com/rrdtyaa_",
+      "https://threads.net/@rioraditya",
+      "https://dribbble.com/rioraditya"
+    ],
+    "jobTitle": "Fullstack Developer"
+  };
+
   return (
     <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-zinc-950 text-zinc-100 selection:bg-white/20`}
         suppressHydrationWarning
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         <Header />
         <main>
           {children}
