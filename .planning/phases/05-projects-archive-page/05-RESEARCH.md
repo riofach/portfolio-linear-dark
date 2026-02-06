@@ -42,7 +42,7 @@ src/
 ### Visual Replication
 The reference `_reference/projects.html` uses specific background utility classes that need to be ported to the new page or `globals.css`:
 - `bg-grid-pattern`: A CSS pattern likely missing from current global config.
-- `bg-[url('.../noise.svg')]`: Matches `--image-noise` in `globals.css`.
+- `bg-noise`: Matches `--image-noise` in `globals.css`.
 - `hero-glow`: Radial gradient for the header section.
 
 **Code Example (Page Background):**
