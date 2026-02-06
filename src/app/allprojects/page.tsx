@@ -1,4 +1,6 @@
 import { projects } from "@/data/projects";
+import { ProjectCard } from "@/components/ui/ProjectCard";
+import { ChevronDown } from "lucide-react";
 
 export const metadata = {
   title: "All Projects | Portfolio",
@@ -39,12 +41,24 @@ export default function AllProjectsPage() {
                 A complete archive of my work in development, design, and experimentation.
               </p>
             </div>
-            {/* Filters removed as per plan */}
           </div>
 
-          {/* Projects Grid Placeholder */}
-          <div className="min-h-[200px] border border-dashed border-white/10 rounded-lg flex items-center justify-center text-gray-500">
-            Projects Grid Loading...
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+            {projects.map((project, index) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
+          </div>
+
+          {/* Load More Button */}
+          <div className="mt-16 flex justify-center">
+            <button
+              className="group flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/20 hover:scale-105 cursor-not-allowed opacity-80"
+              disabled
+            >
+              Load More Projects
+              <ChevronDown className="w-5 h-5 transition-transform group-hover:translate-y-1" />
+            </button>
           </div>
         </div>
       </section>
