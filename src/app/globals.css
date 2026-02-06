@@ -21,9 +21,9 @@
 
 @layer utilities {
   .glass-nav {
-    background: rgba(15, 17, 23, 0.7);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(9, 9, 11, 0.7); /* Zinc-950 base with 70% opacity */
+    backdrop-filter: blur(24px) saturate(180%); /* Premium frosted glass effect */
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
   }
   
   .text-glow {
