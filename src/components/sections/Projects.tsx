@@ -1,5 +1,10 @@
+"use client";
+
 import React from "react";
 import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { motion } from "motion/react";
+import { StaggerContainer } from "@/components/ui/motion-wrapper";
+import { FADE_UP } from "@/lib/motion";
 
 export function Projects() {
   return (
@@ -23,9 +28,13 @@ export function Projects() {
             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
           </a>
         </div>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+        <StaggerContainer className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
           {/* Project 1 */}
-          <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]">
+          <motion.div 
+            variants={FADE_UP}
+            whileHover={{ scale: 1.02 }}
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-colors hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+          >
             <div className="aspect-video w-full overflow-hidden bg-gray-900 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"></div>
               <img
@@ -60,10 +69,14 @@ export function Projects() {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Project 2 */}
-          <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]">
+          <motion.div 
+            variants={FADE_UP}
+            whileHover={{ scale: 1.02 }}
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-colors hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+          >
             <div className="aspect-video w-full overflow-hidden bg-gray-900 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"></div>
               <img
@@ -98,10 +111,14 @@ export function Projects() {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Project 3 */}
-          <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]">
+          <motion.div 
+            variants={FADE_UP}
+            whileHover={{ scale: 1.02 }}
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-colors hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+          >
             <div className="aspect-video w-full overflow-hidden bg-gray-900 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"></div>
               <img
@@ -133,10 +150,14 @@ export function Projects() {
                 </button>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Project 4 */}
-          <div className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]">
+          <motion.div 
+            variants={FADE_UP}
+            whileHover={{ scale: 1.02 }}
+            className="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-colors hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+          >
             <div className="aspect-video w-full overflow-hidden bg-gray-900 relative">
               <div className="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"></div>
               <img
@@ -168,8 +189,8 @@ export function Projects() {
                 </button>
               </div>
             </div>
-          </div>
-        </div>
+          </motion.div>
+        </StaggerContainer>
       </div>
     </section>
   );
