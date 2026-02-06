@@ -74,7 +74,7 @@ Plans:
 **Plans:** 5 plans
 
 Plans:
-- [ ] 03-01-PLAN.md — Foundation & Page Transitions (Config, Template)
+- [x] 03-01-PLAN.md — Foundation & Page Transitions (Config, Template)
 - [ ] 03-02-PLAN.md — Section Reveals (Hero Stagger, Scroll Fade-up)
 - [ ] 03-03-PLAN.md — Micro-interactions (Hover Cards, Timeline)
 - [ ] 03-04-PLAN.md — Contact Form Logic (Validation, State)
@@ -101,4 +101,4 @@ Plans:
 |-------|--------|
 | **1. Foundation & Navigation** | **Complete** |
 | **2. Content Structure & Layout** | **Complete** |
-| 3. Motion & Interactions | **Ready** |
+| 3. Motion & Interactions | **In Progress** |
