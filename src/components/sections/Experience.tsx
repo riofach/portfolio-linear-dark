@@ -1,5 +1,10 @@
+"use client";
+
 import { Terminal, PenTool, Code, LucideIcon } from "lucide-react";
 import { experience } from "@/data/experience";
+import { motion } from "motion/react";
+import { cn } from "@/lib/utils";
+import { FADE_UP, STAGGER, VIEWPORT_CONFIG, SPRING_SUBTLE } from "@/lib/motion";
 
 const iconMap: Record<string, LucideIcon> = {
   terminal: Terminal,
@@ -21,7 +26,13 @@ export function Experience() {
             </p>
           </div>
 
-          <div className="mt-8 grid grid-cols-[48px_1fr] gap-x-4 md:gap-x-8">
+          <motion.div 
+            className="mt-8 grid grid-cols-[48px_1fr] gap-x-4 md:gap-x-8"
+            variants={STAGGER}
+            initial="initial"
+            whileInView="animate"
+            viewport={VIEWPORT_CONFIG}
+          >
             {experience.map((item, index) => {
               const Icon = iconMap[item.icon] || Code;
               const isLast = index === experience.length - 1;
@@ -30,7 +41,11 @@ export function Experience() {
               return (
                 <div key={index} className="contents">
                   {/* Icon Column */}
-                  <div className={`flex flex-col items-center ${isFirst ? "pt-2" : ""}`}>
+                  <motion.div 
+                    className={`flex flex-col items-center ${isFirst ? "pt-2" : ""}`}
+                    variants={FADE_UP}
+                    transition={SPRING_SUBTLE}
+                  >
                     <div
                       className={`flex h-12 w-12 items-center justify-center rounded-full bg-card-dark border border-border-dark ${
                         isFirst
@@ -47,10 +62,14 @@ export function Experience() {
                         )}
                       </div>
                     )}
-                  </div>
+                  </motion.div>
 
                   {/* Content Column */}
-                  <div className={`flex flex-col ${isLast ? "pb-4" : "pb-12"} pt-1`}>
+                  <motion.div 
+                    className={`flex flex-col ${isLast ? "pb-4" : "pb-12"} pt-1`}
+                    variants={FADE_UP}
+                    transition={SPRING_SUBTLE}
+                  >
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-1">
                       <h3 className="text-xl font-semibold text-white">
                         {item.role}
@@ -71,11 +90,11 @@ export function Experience() {
                     <p className="text-slate-400 mt-4 leading-relaxed max-w-2xl">
                       {item.description}
                     </p>
-                  </div>
+                  </motion.div>
                 </div>
               );
             })}
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>
