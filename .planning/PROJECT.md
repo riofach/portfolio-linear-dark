@@ -13,6 +13,7 @@ To provide a polished, high-performance, and visually engaging online presence t
 - **Content:** English language only
 - **Architecture:** Single Page Application (SPA) with scroll navigation
 - **Design:** Strict adherence to the provided `code1.html` layout and "linear-dark" theme
+- **Reference:** Projects page must match `_reference/projects.html` style (excluding Header/Footer)
 
 ## Requirements
 
@@ -38,15 +39,17 @@ To provide a polished, high-performance, and visually engaging online presence t
 - ✓ **SEC-07:** Ensure Contact form has accessible inputs. — v1.0
 
 ### Active
-- [ ] **BE-01**: Connect Contact form to an email service (Resend/Nodemailer).
-- [ ] **BE-02**: Integrate a CMS (Sanity/Strapi) for managing Projects and Blog posts.
-- [ ] **INT-01**: Add multi-language support (Bahasa Indonesia).
-- [ ] **SEO-01**: Implement comprehensive SEO meta tags and Open Graph images.
+- [ ] **PROJ-01**: Create `/allprojects` route with separate page layout.
+- [ ] **PROJ-02**: Implement responsive projects grid matching `projects.html` reference.
+- [ ] **PROJ-03**: Integrate existing global Header and Footer into `/allprojects` (replace reference nav).
+- [ ] **PROJ-04**: Connect Home page "View all projects" button to `/allprojects`.
+- [ ] **PROJ-05**: Remove filter tabs (Development, Design, Writing) as requested.
 
 ### Out of Scope
 - **User Auth**: No user login required for a portfolio.
 - **Blog**: Full blog system is out of scope for v1 (focus is on portfolio).
 - **Admin Panel**: CMS will be headless (Sanity/Strapi), no custom admin panel needed.
+- **Filters**: Explicitly removed from Projects Archive scope.
 
 ## Context
 Shipped v1.0 MVP with ~1600 LOC TypeScript.
@@ -70,6 +73,15 @@ Achieved high performance (100 Lighthouse Performance score targeted) and polish
 | **Centralized Motion** | Consistency. | Used `src/lib/motion.ts` for consistent physics. | ✓ Good |
 | **Metadata API** | Modern Next.js. | Used Next.js 14+ Metadata API for SEO. | ✓ Good |
 | **MotionLink Pattern** | UX. | Wrapped `next/link` with `motion.create()` for interactive cards. | ✓ Good |
+
+## Current Milestone: v1.1 Projects Archive
+
+**Goal:** Expand portfolio with a dedicated "All Projects" archive page based on provided reference design.
+
+**Target features:**
+- Dedicated `/allprojects` route
+- Visual parity with `_reference/projects.html`
+- Seamless navigation integration
 
 ---
 *Last updated: 2026-02-06 after v1.0 milestone*
