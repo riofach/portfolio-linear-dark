@@ -39,14 +39,16 @@ Plans:
 **Goal:** Build all page sections with static or config-driven content to establish visual hierarchy.
 
 **Dependencies:** Phase 1
-**Plans:** 5 plans
+**Plans:** 7 plans
 
 Plans:
 - [x] 02-01-PLAN.md — Hero Section (3D Grid)
 - [x] 02-02-PLAN.md — About & Skills (Data-driven Grid)
 - [x] 02-03-PLAN.md — Projects & Experience (Timeline & Cards)
 - [x] 02-04-PLAN.md — Contact & Footer (Visuals)
-- [ ] 02-05-PLAN.md — Page Composition (Assembly & Responsive Check)
+- [x] 02-05-PLAN.md — Page Composition (Assembly & Responsive Check)
+- [x] 02-06-PLAN.md — Refactor (Structure Cleanup)
+- [x] 02-07-PLAN.md — Layout Finalization (Gap Closure)
 
 | Requirement | Description |
 |-------------|-------------|
@@ -69,6 +71,14 @@ Plans:
 **Goal:** Apply the "linear-dark" motion language to create a polished, immersive experience.
 
 **Dependencies:** Phase 2
+**Plans:** 5 plans
+
+Plans:
+- [ ] 03-01-PLAN.md — Page Transition & Scroll Progress (framer-motion)
+- [ ] 03-02-PLAN.md — Hero & Section Animations (staggered fade-ins, reveals)
+- [ ] 03-03-PLAN.md — Component Micro-interactions (hover cards, buttons)
+- [ ] 03-04-PLAN.md — Contact Form Validation & State (Zod + RHF)
+- [ ] 03-05-PLAN.md — Final Polish & Performance (SEO, Lighthouse)
 
 | Requirement | Description |
 |-------------|-------------|
@@ -90,5 +100,5 @@ Plans:
 | Phase | Status |
 |-------|--------|
 | **1. Foundation & Navigation** | **Complete** |
-| 2. Content Structure & Layout | **In Progress** |
-| 3. Motion & Interactions | Pending |
+| **2. Content Structure & Layout** | **Complete** |
+| 3. Motion & Interactions | **In Progress** |
