@@ -12,7 +12,7 @@
 Phase: 2 of 3 (Content Structure & Layout)
 Plan: 6 of 6 in current phase
 Status: Phase complete
-Last activity: 2026-02-06 - Completed 02-06-SUMMARY.md
+Last activity: 2026-02-06 - Completed 02-06-SUMMARY.md (Experience Data Refactor)
 
 Progress: ██████████ 100%
 
@@ -33,6 +33,7 @@ Progress: ██████████ 100%
 | 2 | Period & Tags fields | Standardized data structure for timeline and cards |
 | 2 | Unified Max-Width | Consistent alignment across all sections |
 | 2 | Skills Data in .tsx | Support JSX/SVG directly in data for maintenance |
+| 2 | Experience Data Separation | Separated content from presentation with icon mapping |
 
 ## Blockers/Concerns Carried Forward
 None
