@@ -5,6 +5,7 @@ export interface Skill {
 	hoverColor: string;
 	svg: ReactNode;
 	category?: string;
+	iconName?: string;
 }
 
 export const skills: Skill[] = [

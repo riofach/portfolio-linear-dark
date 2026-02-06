@@ -5,7 +5,7 @@ export function Hero() {
 	return (
 		<section
 			id="home"
-			className="relative flex min-h-screen flex-col items-center justify-start overflow-hidden bg-background pt-24 pb-16 md:pt-40 md:pb-20"
+			className="relative flex min-h-screen flex-col items-center justify-start overflow-hidden bg-background pt-16 pb-16 md:pt-40 md:pb-10"
 		>
 			{/* Noise Texture */}
 			<div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"></div>
