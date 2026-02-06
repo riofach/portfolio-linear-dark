@@ -1,5 +1,9 @@
+"use client";
+
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
+import { FADE_UP, STAGGER, SPRING_SUBTLE } from '@/lib/motion';
 
 export function Hero() {
 	return (
@@ -28,29 +32,46 @@ export function Hero() {
 			<div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-primary/20 blur-[120px] pointer-events-none"></div>
 
 			{/* Hero Content */}
-			<div className="relative z-10 mx-auto max-w-5xl px-6 text-center">
+			<motion.div 
+				className="relative z-10 mx-auto max-w-5xl px-6 text-center"
+				variants={STAGGER}
+				initial="initial"
+				animate="animate"
+			>
 				{/* Availability Badge */}
-				<div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-primary backdrop-blur-sm">
+				<motion.div 
+					variants={FADE_UP}
+					className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-primary backdrop-blur-sm"
+				>
 					<span className="relative flex h-2 w-2">
 						<span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
 						<span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
 					</span>
 					Available for new projects
-				</div>
+				</motion.div>
 
-				<h1 className="mb-8 text-5xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl text-balance drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+				<motion.h1 
+					variants={FADE_UP}
+					className="mb-8 text-5xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl text-balance drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
+				>
 					Building digital <br />
 					<span className="bg-gradient-to-r from-white via-white to-gray-500 bg-clip-text text-transparent">
 						experiences that matter.
 					</span>
-				</h1>
+				</motion.h1>
 
-				<p className="mx-auto mb-10 max-w-2xl text-lg text-gray-400 sm:text-xl leading-relaxed text-balance">
+				<motion.p 
+					variants={FADE_UP}
+					className="mx-auto mb-10 max-w-2xl text-lg text-gray-400 sm:text-xl leading-relaxed text-balance"
+				>
 					Fullstack Developer & UI/UX Designer crafting beautiful, functional web applications with
 					a focus on user experience and clean, maintainable code.
-				</p>
+				</motion.p>
 
-				<div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+				<motion.div 
+					variants={FADE_UP}
+					className="flex flex-col items-center justify-center gap-4 sm:flex-row"
+				>
 					<Link
 						href="#work"
 						className="group flex h-12 min-w-[160px] items-center justify-center gap-2 rounded-lg bg-primary px-6 text-base font-bold text-white transition-all hover:bg-primary/90 hover:shadow-[0_0_20px_rgba(91,19,236,0.5)]"
@@ -64,8 +85,8 @@ export function Hero() {
 					>
 						Contact Me
 					</Link>
-				</div>
-			</div>
+				</motion.div>
+			</motion.div>
 		</section>
 	);
 }
