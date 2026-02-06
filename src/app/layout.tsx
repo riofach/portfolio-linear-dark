@@ -15,8 +15,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio | Linear Dark",
-  description: "A developer portfolio",
+  title: "Rio Raditya - Fullstack Developer & UI/UX Designer",
+  description: "Fullstack Developer & UI/UX Designer crafting beautiful, functional web applications with a focus on user experience and clean, maintainable code.",
+  openGraph: {
+    title: "Rio Raditya - Portfolio",
+    description: "Building digital experiences that matter. Explore my projects and skills.",
+    url: "https://portfolio-linear-dark.vercel.app",
+    siteName: "Rio Raditya Portfolio",
+    images: [
+      {
+        url: "/og-image.png", // We don't have this file but standard practice to link it
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Rio Raditya - Portfolio",
+    description: "Fullstack Developer & UI/UX Designer crafting beautiful web experiences.",
+  },
 };
 
 export default function RootLayout({
