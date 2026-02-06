@@ -79,6 +79,7 @@ Plans:
 - [x] 03-03-PLAN.md — Micro-interactions (Hover Cards, Timeline)
 - [x] 03-04-PLAN.md — Contact Form Logic (Validation, State)
 - [x] 03-05-PLAN.md — Final Polish & Performance (SEO, Lighthouse)
+- [x] 03-06-PLAN.md — Technical SEO & Identity (Gap Closure)
 
 | Requirement | Description |
 |-------------|-------------|
