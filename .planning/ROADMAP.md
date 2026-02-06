@@ -26,6 +26,9 @@
 
 ### Phase 5: Projects Archive Page
 **Goal:** Create a dedicated archive page for all projects matching the provided visual reference.
+**Plans:**
+- [ ] 05-01-PLAN.md — Global styles & Nav logic
+- [ ] 05-02-PLAN.md — Create /allprojects page
 **Requirements:** PROJ-01, PROJ-02, PROJ-03, PROJ-04, PROJ-05, PROJ-06, NAV-04
 **Success Criteria:**
 1. `/allprojects` route works and displays correctly.
