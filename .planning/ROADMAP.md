@@ -78,7 +78,7 @@ Plans:
 - [x] 03-02-PLAN.md — Section Reveals (Hero Stagger, Scroll Fade-up)
 - [x] 03-03-PLAN.md — Micro-interactions (Hover Cards, Timeline)
 - [x] 03-04-PLAN.md — Contact Form Logic (Validation, State)
-- [ ] 03-05-PLAN.md — Final Polish & Performance (SEO, Lighthouse)
+- [x] 03-05-PLAN.md — Final Polish & Performance (SEO, Lighthouse)
 
 | Requirement | Description |
 |-------------|-------------|
@@ -101,4 +101,4 @@ Plans:
 |-------|--------|
 | **1. Foundation & Navigation** | **Complete** |
 | **2. Content Structure & Layout** | **Complete** |
-| 3. Motion & Interactions | **In Progress** |
+| **3. Motion & Interactions** | **Complete** |
