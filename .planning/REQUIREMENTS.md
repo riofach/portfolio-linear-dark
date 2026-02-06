@@ -7,13 +7,13 @@
 
 ### Projects Archive (v1.1)
 
-- [ ] **PROJ-01**: Create `/allprojects` route using Next.js App Router conventions.
-- [ ] **PROJ-02**: Implement grid layout matching `_reference/projects.html` (2 columns on lg, consistent card styles).
-- [ ] **PROJ-03**: Implement "Load More" button UI (visual only if no backend yet).
-- [ ] **PROJ-04**: Ensure page title/header section matches reference (Title + Counter + Subtitle).
-- [ ] **PROJ-05**: Use existing global `Header` and `Footer` components (do NOT use reference implementation).
-- [ ] **PROJ-06**: Remove category filter tabs (Development, Design, Writing) from the UI.
-- [ ] **NAV-04**: Update "View all projects" button on Home page to navigate to `/allprojects`.
+- [x] **PROJ-01**: Create `/allprojects` route using Next.js App Router conventions.
+- [x] **PROJ-02**: Implement grid layout matching `_reference/projects.html` (2 columns on lg, consistent card styles).
+- [x] **PROJ-03**: Implement "Load More" button UI (visual only if no backend yet).
+- [x] **PROJ-04**: Ensure page title/header section matches reference (Title + Counter + Subtitle).
+- [x] **PROJ-05**: Use existing global `Header` and `Footer` components (do NOT use reference implementation).
+- [x] **PROJ-06**: Remove category filter tabs (Development, Design, Writing) from the UI.
+- [x] **NAV-04**: Update "View all projects" button on Home page to navigate to `/allprojects`.
 
 ## v1.2 Backend & Security (Planned)
 
@@ -43,13 +43,13 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| PROJ-01 | Phase 5 | Pending |
-| PROJ-02 | Phase 5 | Pending |
-| PROJ-03 | Phase 5 | Pending |
-| PROJ-04 | Phase 5 | Pending |
-| PROJ-05 | Phase 5 | Pending |
-| PROJ-06 | Phase 5 | Pending |
-| NAV-04 | Phase 5 | Pending |
+| PROJ-01 | Phase 5 | Complete |
+| PROJ-02 | Phase 5 | Complete |
+| PROJ-03 | Phase 5 | Complete |
+| PROJ-04 | Phase 5 | Complete |
+| PROJ-05 | Phase 5 | Complete |
+| PROJ-06 | Phase 5 | Complete |
+| NAV-04 | Phase 5 | Complete |
 
 **Coverage:**
 - v1.1 requirements: 7 total
