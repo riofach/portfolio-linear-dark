@@ -101,10 +101,11 @@ Plans:
 **Requirements:** SEC-04
 **Gap Closure:** Closes gaps from audit
 
-**Plans:** 1 plans
+**Plans:** 2 plans
 
 Plans:
 - [x] 04-01-PLAN.md — Refactor Projects to Data-Driven Implementation
+- [ ] 04-02-PLAN.md — Fix Image Config (Gap Closure)
 
 | Requirement | Description |
 |-------------|-------------|
