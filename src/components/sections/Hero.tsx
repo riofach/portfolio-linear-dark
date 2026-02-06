@@ -1,4 +1,4 @@
-"use client";
+'use client';
 
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
@@ -29,17 +29,17 @@ export function Hero() {
 			</div>
 
 			{/* Central Glow Orb */}
-			<div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-[600px] w-[600px] rounded-full bg-primary/20 blur-[120px] pointer-events-none"></div>
+			<div className="absolute left-1/2 top-1/3 -translate-x-1/2 -translate-y-1/2 h-[650px] w-[650px] rounded-full bg-primary/20 blur-[120px] pointer-events-none"></div>
 
 			{/* Hero Content */}
-			<motion.div 
+			<motion.div
 				className="relative z-10 mx-auto max-w-5xl px-6 text-center"
 				variants={STAGGER}
 				initial="initial"
 				animate="animate"
 			>
 				{/* Availability Badge */}
-				<motion.div 
+				<motion.div
 					variants={FADE_UP}
 					className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs font-medium text-primary backdrop-blur-sm"
 				>
@@ -50,7 +50,7 @@ export function Hero() {
 					Available for new projects
 				</motion.div>
 
-				<motion.h1 
+				<motion.h1
 					variants={FADE_UP}
 					className="mb-8 text-5xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl text-balance drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
 				>
@@ -60,7 +60,7 @@ export function Hero() {
 					</span>
 				</motion.h1>
 
-				<motion.p 
+				<motion.p
 					variants={FADE_UP}
 					className="mx-auto mb-10 max-w-2xl text-lg text-gray-400 sm:text-xl leading-relaxed text-balance"
 				>
@@ -68,7 +68,7 @@ export function Hero() {
 					a focus on user experience and clean, maintainable code.
 				</motion.p>
 
-				<motion.div 
+				<motion.div
 					variants={FADE_UP}
 					className="flex flex-col items-center justify-center gap-4 sm:flex-row"
 				>
