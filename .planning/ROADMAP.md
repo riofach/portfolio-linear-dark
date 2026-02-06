@@ -27,7 +27,7 @@
 ### Phase 5: Projects Archive Page
 **Goal:** Create a dedicated archive page for all projects matching the provided visual reference.
 **Plans:**
-- [ ] 05-01-PLAN.md — Global styles & Nav logic
+- [x] 05-01-PLAN.md — Global styles & Nav logic
 - [ ] 05-02-PLAN.md — Create /allprojects page
 **Requirements:** PROJ-01, PROJ-02, PROJ-03, PROJ-04, PROJ-05, PROJ-06, NAV-04
 **Success Criteria:**
@@ -44,4 +44,4 @@
 | 2. Content        | v1.0      | 7/7            | Complete    | 2026-02-05 |
 | 3. Motion         | v1.0      | 6/6            | Complete    | 2026-02-06 |
 | 4. Projects       | v1.0      | 2/2            | Complete    | 2026-02-06 |
-| 5. Projects Page  | v1.1      | 0/2            | Not started | -          |
+| 5. Projects Page  | v1.1      | 1/2            | In progress | -          |
