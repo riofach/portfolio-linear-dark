@@ -20,6 +20,12 @@
 }
 
 @layer utilities {
+  .bg-grid-pattern {
+    background-image: linear-gradient(to right, #1E2029 1px, transparent 1px),
+                      linear-gradient(to bottom, #1E2029 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
   .glass-nav {
     background: rgba(9, 9, 11, 0.7); /* Zinc-950 base with 70% opacity */
     backdrop-filter: blur(24px) saturate(180%); /* Premium frosted glass effect */
