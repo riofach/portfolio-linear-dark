@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { ReactLenis } from "lenis/react";
 import "./globals.css";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -31,13 +30,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased bg-zinc-950 text-zinc-100 selection:bg-white/20`}
         suppressHydrationWarning
       >
-        <ReactLenis root>
-          <Header />
-          <main>
-            {children}
-          </main>
-          <Footer />
-        </ReactLenis>
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
