@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { skills } from '@/data/skills';
+import { skills, type Skill } from '@/data/skills';
 import { StaggerContainer } from "@/components/ui/motion-wrapper";
 import { FADE_UP } from "@/lib/motion";
 
@@ -21,7 +21,7 @@ export function Skills() {
 					</p>
 				</div>
 				<StaggerContainer className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-					{skills.map((skill) => (
+					{skills.map((skill: Skill) => (
 						<motion.div
 							key={skill.name}
 							variants={FADE_UP}
