@@ -1,0 +1,498 @@
+<!doctype html>
+<html class="dark" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>All Projects Archive</title>
+		<link href="https://fonts.googleapis.com" rel="preconnect" />
+		<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+		<script id="tailwind-config">
+			tailwind.config = {
+				darkMode: 'class',
+				theme: {
+					extend: {
+						colors: {
+							primary: '#5b13ec',
+							'background-light': '#f6f6f8',
+							'background-dark': '#0F1117',
+							'card-dark': '#16181D',
+							'border-dark': '#1E2029',
+						},
+						fontFamily: {
+							display: ['Inter', 'sans-serif'],
+						},
+						borderRadius: {
+							DEFAULT: '0.25rem',
+							lg: '0.5rem',
+							xl: '0.75rem',
+							'2xl': '1rem',
+							full: '9999px',
+						},
+						backgroundImage: {
+							'grid-pattern':
+								'linear-gradient(to right, #1E2029 1px, transparent 1px), linear-gradient(to bottom, #1E2029 1px, transparent 1px)',
+						},
+					},
+				},
+			};
+		</script>
+		<style>
+			::-webkit-scrollbar {
+				width: 8px;
+			}
+			::-webkit-scrollbar-track {
+				background: #0f1117;
+			}
+			::-webkit-scrollbar-thumb {
+				background: #2e2839;
+				border-radius: 4px;
+			}
+			::-webkit-scrollbar-thumb:hover {
+				background: #5b13ec;
+			}
+			.glass-nav {
+				background: rgba(15, 17, 23, 0.7);
+				backdrop-filter: blur(12px);
+				-webkit-backdrop-filter: blur(12px);
+			}
+			.text-glow {
+				text-shadow: 0 0 20px rgba(91, 19, 236, 0.5);
+			}
+			.hero-glow {
+				background: radial-gradient(
+					circle at 50% 50%,
+					rgba(91, 19, 236, 0.15) 0%,
+					rgba(22, 16, 34, 0) 50%
+				);
+			}
+			.tech-icon-glow {
+				filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.15));
+				transition: filter 0.3s ease;
+			}
+			.group:hover .tech-icon-glow {
+				filter: drop-shadow(0 0 8px rgba(91, 19, 236, 0.4));
+			}
+		</style>
+	</head>
+	<body
+		class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white font-display overflow-x-hidden selection:bg-primary selection:text-white"
+	>
+		<div class="relative flex min-h-screen flex-col">
+			<header class="sticky top-0 z-50 w-full border-b border-border-dark glass-nav">
+				<div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6 lg:px-8">
+					<div class="flex items-center gap-2">
+						<div class="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
+							<span class="material-symbols-outlined text-xl">terminal</span>
+						</div>
+						<span class="text-lg font-bold tracking-tight">John Doe</span>
+					</div>
+					<nav class="hidden md:flex items-center gap-8">
+						<a
+							class="text-sm font-medium text-gray-400 transition-colors hover:text-white relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform hover:after:scale-x-100"
+							href="#"
+							>Home</a
+						>
+						<a
+							class="text-sm font-medium text-gray-400 transition-colors hover:text-white relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform hover:after:scale-x-100"
+							href="#about"
+							>About</a
+						>
+						<a
+							class="text-sm font-medium text-white transition-all hover:text-primary relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-100 after:bg-primary after:shadow-[0_0_8px_2px_rgba(91,19,236,0.6)] after:transition-transform"
+							href="#work"
+							>Work</a
+						>
+						<a
+							class="text-sm font-medium text-gray-400 transition-colors hover:text-white relative py-1 after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-full after:scale-x-0 after:bg-primary after:transition-transform hover:after:scale-x-100"
+							href="#skills"
+							>Tools</a
+						>
+					</nav>
+					<div class="flex items-center gap-4">
+						<button
+							class="hidden md:flex items-center gap-2 rounded-lg bg-white/5 border border-white/10 px-4 py-2 text-sm font-medium text-white transition-all hover:bg-white/10 hover:border-white/20"
+						>
+							<span class="material-symbols-outlined text-[18px]">download</span>
+							Resume
+						</button>
+						<button class="md:hidden p-2 text-white">
+							<span class="material-symbols-outlined">menu</span>
+						</button>
+					</div>
+				</div>
+			</header>
+			<main class="flex-grow">
+				<section class="relative pt-24 pb-16 px-6 lg:px-8">
+					<div
+						class="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none"
+						data-alt="Subtle noise texture overlay"
+					></div>
+					<div
+						class="absolute inset-0 bg-grid-pattern [background-size:40px_40px] opacity-[0.05] pointer-events-none"
+						data-alt="Geometric grid pattern background"
+					></div>
+					<div
+						class="absolute left-1/2 top-0 -translate-x-1/2 h-[400px] w-[600px] rounded-full bg-primary/10 blur-[100px] pointer-events-none"
+					></div>
+					<div class="mx-auto max-w-7xl relative z-10">
+						<div
+							class="mb-12 flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between"
+						>
+							<div>
+								<div class="flex items-center gap-3">
+									<h1 class="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+										All Projects
+									</h1>
+									<span
+										class="flex items-center justify-center rounded-full bg-white/5 border border-white/10 px-3 py-1 text-sm font-medium text-gray-400"
+										>12</span
+									>
+								</div>
+								<p class="mt-4 text-lg text-gray-400 max-w-2xl">
+									A complete archive of my work in development, design, and experimentation.
+								</p>
+							</div>
+							<div class="flex overflow-x-auto pb-2 md:pb-0 gap-2 no-scrollbar">
+								<button
+									class="whitespace-nowrap rounded-full bg-primary/20 border border-primary/50 px-4 py-2 text-sm font-medium text-white transition-all shadow-[0_0_15px_rgba(91,19,236,0.3)]"
+								>
+									All Work
+								</button>
+								<button
+									class="whitespace-nowrap rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/10 hover:text-white hover:border-white/20"
+								>
+									Development
+								</button>
+								<button
+									class="whitespace-nowrap rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/10 hover:text-white hover:border-white/20"
+								>
+									Design
+								</button>
+								<button
+									class="whitespace-nowrap rounded-full bg-white/5 border border-white/10 px-4 py-2 text-sm font-medium text-gray-400 transition-all hover:bg-white/10 hover:text-white hover:border-white/20"
+								>
+									Writing
+								</button>
+							</div>
+						</div>
+						<div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
+							<div
+								class="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+							>
+								<div class="aspect-video w-full overflow-hidden bg-gray-900 relative">
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"
+									></div>
+									<div
+										class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+										data-alt="Dashboard interface with data visualization charts"
+										style="
+											background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDrYuG7lmS1K0jJVvUmEs9X3jf7z8BIJBziYsYRn38eQGLXN5blpfdAqsB0HCyf2BWm7LNxavbf_ZQQGqjjrYV4RSB34-UWsrtk8Vf0HsQSnbPYQNvQZ449EVUBooz6EL30-cj7g3rjthn8t8U0Uchp7n9Z8Bnqm3vsATeAcZ-wlEKgOaxAvMNBzNQUKJSabk2yUNlGcKPtIFLS05yqDPR3BuqJxLf4ocn_ufpTvtwZTjFUgxnWXZbLGJru3ukl3DbnzQOnynMWYj0');
+										"
+									></div>
+								</div>
+								<div class="relative z-20 -mt-12 p-8 pt-0">
+									<div class="mb-4 flex gap-2">
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>React</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Tailwind</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Node.js</span
+										>
+									</div>
+									<h3
+										class="text-2xl font-bold text-white group-hover:text-primary transition-colors"
+									>
+										E-commerce Analytics Dashboard
+									</h3>
+									<p class="mt-2 text-gray-400">
+										A comprehensive analytics platform for online retailers, featuring real-time
+										data visualization and inventory management.
+									</p>
+									<div class="mt-6 flex items-center gap-4">
+										<button
+											class="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1"
+										>
+											Case Study
+											<span class="material-symbols-outlined text-sm">arrow_outward</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div
+								class="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+							>
+								<div class="aspect-video w-full overflow-hidden bg-gray-900 relative">
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"
+									></div>
+									<div
+										class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+										data-alt="Mobile banking application interface on a phone screen"
+										style="
+											background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCUkuIrOtYT5ddkCUT7vgZkJ1SDURC1jCdlWliqnUON-i7D5ZlmvRK6p2KKUhc6FWQfy1LlAtN7iTWTHC5F3C9P_3h9Yuf_eYy_UATEBqppUH36BcPLHRBlhQuJDGBS9I0d5aCZET-xTFMnWSh11ozKfyggnJfJHT_5CL43LQqWH_6LWOfyTK1G47wXFsgrUgHqczW_jeOdzBSMpkCf10PAjM-cP-UI6WyUTRdl_CQyorjHVaC2LUUEyZSuh3o588qJjSH3PeSEPow');
+										"
+									></div>
+								</div>
+								<div class="relative z-20 -mt-12 p-8 pt-0">
+									<div class="mb-4 flex gap-2">
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>iOS</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>SwiftUI</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Figma</span
+										>
+									</div>
+									<h3
+										class="text-2xl font-bold text-white group-hover:text-primary transition-colors"
+									>
+										NeoBank Mobile App
+									</h3>
+									<p class="mt-2 text-gray-400">
+										A modern fintech mobile application focused on simplifying personal finance for
+										Gen Z users.
+									</p>
+									<div class="mt-6 flex items-center gap-4">
+										<button
+											class="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1"
+										>
+											Case Study
+											<span class="material-symbols-outlined text-sm">arrow_outward</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div
+								class="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+							>
+								<div class="aspect-video w-full overflow-hidden bg-gray-900 relative">
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"
+									></div>
+									<div
+										class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+										data-alt="Travel website landing page with scenic landscape"
+										style="
+											background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDMpgKHxr1YS0o7tpoqdubRez4WeppIUQVhlhvRaU6LDKVNypCZWT7M5U4ParS-P6IURbLbFX6CS3ff0MFbJMGBmR82M_IGHaNjnuF6OByAAU6LBHxWXrIssijWzQR7g86iDxrvOjPH_g-GnstXpHC2ooI1Lt-DhgvPvJHatrDUguwG3m8pTEFQwqsr6mv55FMP_kPRRjRY8QYWDR4XcowHhykeSqK8Sixihtab4ewHU6dV02g7cb152xyCUp0WVk56hSMpX03oIC4');
+										"
+									></div>
+								</div>
+								<div class="relative z-20 -mt-12 p-8 pt-0">
+									<div class="mb-4 flex gap-2">
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Next.js</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Supabase</span
+										>
+									</div>
+									<h3
+										class="text-2xl font-bold text-white group-hover:text-primary transition-colors"
+									>
+										Wanderlust Travel Platform
+									</h3>
+									<p class="mt-2 text-gray-400">
+										A comprehensive booking engine allowing users to create custom travel
+										itineraries with AI assistance.
+									</p>
+									<div class="mt-6 flex items-center gap-4">
+										<button
+											class="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1"
+										>
+											Case Study
+											<span class="material-symbols-outlined text-sm">arrow_outward</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div
+								class="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+							>
+								<div class="aspect-video w-full overflow-hidden bg-gray-900 relative">
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"
+									></div>
+									<div
+										class="h-full w-full bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+										data-alt="Abstract AI generated artwork representing content generation"
+										style="
+											background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBwQwfJq3QA3xpmfQuqb2QogwEZHr-fmXykYnNQTcsZmuQn5br_PjzUwqBSw3YDu8NZk_rfUdo266ygualBCAMNvzoT53m3gJqezpiy6FvcZjidnafI8LSJnMwhEDe6ai0xmoGzwaRVAJPzT0zHsgyOIfmj6pG-iNTQMCmKKgMctpy1AzojX0WlW-F6H2wBEjhP0g_ggAA32jfxTkNXa7LZnJE6Cg7z7LCJ5eYkm3n0iB7snvOWdOcoYIceYXF3koIm-86hzmTW4zg');
+										"
+									></div>
+								</div>
+								<div class="relative z-20 -mt-12 p-8 pt-0">
+									<div class="mb-4 flex gap-2">
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Python</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>OpenAI</span
+										>
+									</div>
+									<h3
+										class="text-2xl font-bold text-white group-hover:text-primary transition-colors"
+									>
+										CopyGen AI
+									</h3>
+									<p class="mt-2 text-gray-400">
+										An intelligent content generation tool helping marketers create SEO-optimized
+										blog posts in minutes.
+									</p>
+									<div class="mt-6 flex items-center gap-4">
+										<button
+											class="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1"
+										>
+											Case Study
+											<span class="material-symbols-outlined text-sm">arrow_outward</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div
+								class="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+							>
+								<div class="aspect-video w-full overflow-hidden bg-gray-900 relative">
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"
+									></div>
+									<div
+										class="h-full w-full flex items-center justify-center bg-gray-800 transition-transform duration-500 group-hover:scale-105"
+									>
+										<span class="material-symbols-outlined text-6xl text-white/20">palette</span>
+									</div>
+								</div>
+								<div class="relative z-20 -mt-12 p-8 pt-0">
+									<div class="mb-4 flex gap-2">
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Figma</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>Storybook</span
+										>
+									</div>
+									<h3
+										class="text-2xl font-bold text-white group-hover:text-primary transition-colors"
+									>
+										Nexus Design System
+									</h3>
+									<p class="mt-2 text-gray-400">
+										A scalable, multi-brand design system built for enterprise applications to
+										ensure consistency across products.
+									</p>
+									<div class="mt-6 flex items-center gap-4">
+										<button
+											class="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1"
+										>
+											Case Study
+											<span class="material-symbols-outlined text-sm">arrow_outward</span>
+										</button>
+									</div>
+								</div>
+							</div>
+							<div
+								class="group relative overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-all hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)]"
+							>
+								<div class="aspect-video w-full overflow-hidden bg-gray-900 relative">
+									<div
+										class="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"
+									></div>
+									<div
+										class="h-full w-full flex items-center justify-center bg-gray-800 transition-transform duration-500 group-hover:scale-105"
+									>
+										<span class="material-symbols-outlined text-6xl text-white/20"
+											>code_blocks</span
+										>
+									</div>
+								</div>
+								<div class="relative z-20 -mt-12 p-8 pt-0">
+									<div class="mb-4 flex gap-2">
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>NPM</span
+										>
+										<span
+											class="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"
+											>TypeScript</span
+										>
+									</div>
+									<h3
+										class="text-2xl font-bold text-white group-hover:text-primary transition-colors"
+									>
+										React Hook Form UI
+									</h3>
+									<p class="mt-2 text-gray-400">
+										An open-source library of pre-built form components designed to work seamlessly
+										with React Hook Form.
+									</p>
+									<div class="mt-6 flex items-center gap-4">
+										<button
+											class="text-sm font-bold text-white hover:text-primary transition-colors flex items-center gap-1"
+										>
+											View Code <span class="material-symbols-outlined text-sm">arrow_outward</span>
+										</button>
+										<a class="text-sm text-gray-500 hover:text-white transition-colors" href="#">
+											Documentation
+										</a>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="mt-16 flex justify-center">
+							<button
+								class="group flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition-all hover:bg-white/10 hover:border-white/20 hover:scale-105"
+							>
+								Load More Projects
+								<span
+									class="material-symbols-outlined transition-transform group-hover:translate-y-1 text-lg"
+									>expand_more</span
+								>
+							</button>
+						</div>
+					</div>
+				</section>
+			</main>
+			<footer class="border-t border-border-dark bg-background-dark py-12 px-6">
+				<div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 md:flex-row">
+					<div class="flex items-center gap-2 text-white">
+						<span class="material-symbols-outlined">terminal</span>
+						<span class="font-bold">John Doe</span>
+					</div>
+					<div class="flex gap-8 text-sm font-medium text-gray-400">
+						<a class="hover:text-primary transition-colors" href="#">Twitter</a>
+						<a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
+						<a class="hover:text-primary transition-colors" href="#">GitHub</a>
+						<a class="hover:text-primary transition-colors" href="#">Dribbble</a>
+					</div>
+					<p class="text-sm text-gray-500">© 2024 John Doe. All rights reserved.</p>
+				</div>
+			</footer>
+		</div>
+	</body>
+</html>

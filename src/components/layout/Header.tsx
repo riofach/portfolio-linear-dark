@@ -36,7 +36,7 @@ export function Header() {
 					<div className="flex h-8 w-8 items-center justify-center rounded-lg bg-primary text-white">
 						<Terminal className="h-5 w-5" />
 					</div>
-					<span className="text-lg font-bold tracking-tight text-white">Rio Raditya</span>
+					<span className="text-lg font-bold tracking-tight text-white">Fachrio R</span>
 				</div>
 
 				{/* Desktop Nav Links */}
