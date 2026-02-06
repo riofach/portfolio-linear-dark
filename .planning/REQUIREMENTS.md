@@ -14,28 +14,28 @@
 - [x] **NAV-03**: Build a responsive mobile menu with a hamburger toggle.
 
 ### Hero Section
-- [ ] **SEC-01**: Implement Hero section with "text glow" effects and background grid pattern.
-- [ ] **MOT-01**: Add staggered fade-in entrance animations for Hero text and buttons.
+- [x] **SEC-01**: Implement Hero section with "text glow" effects and background grid pattern.
+- [x] **MOT-01**: Add staggered fade-in entrance animations for Hero text and buttons.
 
 ### About Section
-- [ ] **SEC-02**: Build About section with a responsive grid layout (Text + Image).
-- [ ] **MOT-02**: Add scroll reveal animation (fade-up) for the About section content.
+- [x] **SEC-02**: Build About section with a responsive grid layout (Text + Image).
+- [x] **MOT-02**: Add scroll reveal animation (fade-up) for the About section content.
 
 ### Skills Section (Expertise & Tools)
-- [ ] **SEC-03**: Render skills grid dynamically from `data/skills.ts`.
-- [ ] **MOT-03**: Add subtle hover glow effects to skill cards.
+- [x] **SEC-03**: Render skills grid dynamically from `data/skills.ts`.
+- [x] **MOT-03**: Add subtle hover glow effects to skill cards.
 
 ### Work Section
-- [ ] **SEC-04**: Render project cards dynamically from `data/projects.ts` (simulating API structure).
-- [ ] **MOT-04**: Add hover effects to project cards (scale up, border glow).
+- [x] **SEC-04**: Render project cards dynamically from `data/projects.ts` (simulating API structure).
+- [x] **MOT-04**: Add hover effects to project cards (scale up, border glow).
 
 ### Experience Section
-- [ ] **SEC-05**: Build vertical timeline layout rendering data from `data/experience.ts`.
-- [ ] **MOT-05**: Add sequential fade-in animation for timeline items.
+- [x] **SEC-05**: Build vertical timeline layout rendering data from `data/experience.ts`.
+- [x] **MOT-05**: Add sequential fade-in animation for timeline items.
 
 ### Contact & Footer
-- [ ] **SEC-06**: Implement Contact section UI (Form + Info) and Footer.
-- [ ] **SEC-07**: Ensure Contact form has accessible inputs (visual only for v1, no backend).
+- [x] **SEC-06**: Implement Contact section UI (Form + Info) and Footer.
+- [x] **SEC-07**: Ensure Contact form has accessible inputs (visual only for v1, no backend).
 
 ## v2 Requirements (Deferred)
 - [ ] **BE-01**: Connect Contact form to an email service (Resend/Nodemailer).
@@ -57,15 +57,15 @@
 | NAV-01 | Phase 1 | Complete |
 | NAV-02 | Phase 1 | Complete |
 | NAV-03 | Phase 1 | Complete |
-| SEC-01 | Phase 2 | Pending |
-| MOT-01 | Phase 3 | Pending |
-| SEC-02 | Phase 2 | Pending |
-| MOT-02 | Phase 3 | Pending |
-| SEC-03 | Phase 2 | Pending |
-| MOT-03 | Phase 3 | Pending |
-| SEC-04 | Phase 2 | Pending |
-| MOT-04 | Phase 3 | Pending |
-| SEC-05 | Phase 2 | Pending |
-| MOT-05 | Phase 3 | Pending |
-| SEC-06 | Phase 2 | Pending |
-| SEC-07 | Phase 2 | Pending |
+| SEC-01 | Phase 2 | Complete |
+| MOT-01 | Phase 3 | Complete |
+| SEC-02 | Phase 2 | Complete |
+| MOT-02 | Phase 3 | Complete |
+| SEC-03 | Phase 2 | Complete |
+| MOT-03 | Phase 3 | Complete |
+| SEC-04 | Phase 2 | Complete |
+| MOT-04 | Phase 3 | Complete |
+| SEC-05 | Phase 2 | Complete |
+| MOT-05 | Phase 3 | Complete |
+| SEC-06 | Phase 2 | Complete |
+| SEC-07 | Phase 2 | Complete |
