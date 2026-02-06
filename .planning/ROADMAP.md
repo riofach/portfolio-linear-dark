@@ -3,7 +3,7 @@
 ## Milestones
 
 - ✅ **v1.0 MVP** — Phases 1-4 (shipped 2026-02-06)
-- 🚧 **v1.1 Projects Archive** — Phase 5 (current)
+- ✅ **v1.1 Projects Archive** — Phase 5 (shipped 2026-02-06)
 - 📋 **v1.2 Backend & Security** — Phases 6+ (planned)
 
 ## Phases
@@ -18,9 +18,12 @@
 
 </details>
 
-### 🚧 v1.1 Projects Archive
+<details>
+<summary>✅ v1.1 Projects Archive (Phase 5) — SHIPPED 2026-02-06</summary>
 
-- [ ] Phase 5: Projects Archive Page (2 plans)
+- [x] Phase 5: Projects Archive Page (2 plans)
+
+</details>
 
 ## Phase Details
 
@@ -28,7 +31,7 @@
 **Goal:** Create a dedicated archive page for all projects matching the provided visual reference.
 **Plans:**
 - [x] 05-01-PLAN.md — Global styles & Nav logic
-- [ ] 05-02-PLAN.md — Create /allprojects page
+- [x] 05-02-PLAN.md — Create /allprojects page
 **Requirements:** PROJ-01, PROJ-02, PROJ-03, PROJ-04, PROJ-05, PROJ-06, NAV-04
 **Success Criteria:**
 1. `/allprojects` route works and displays correctly.
@@ -44,4 +47,4 @@
 | 2. Content        | v1.0      | 7/7            | Complete    | 2026-02-05 |
 | 3. Motion         | v1.0      | 6/6            | Complete    | 2026-02-06 |
 | 4. Projects       | v1.0      | 2/2            | Complete    | 2026-02-06 |
-| 5. Projects Page  | v1.1      | 1/2            | In progress | -          |
+| 5. Projects Page  | v1.1      | 2/2            | Complete    | 2026-02-06 |
