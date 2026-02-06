@@ -22,16 +22,16 @@ export function About() {
 							</h2>
 							<div className="space-y-6 text-lg text-gray-400 leading-relaxed">
 								<p>
-									I&apos;m a multidisciplinary developer and designer with over 5 years of experience
-									in shipping digital products. My journey began with a curiosity for how things work
-									on the web, which quickly evolved into a career obsession with creating
-									pixel-perfect user experiences.
+									I&apos;m a multidisciplinary developer and designer with over 5 years of
+									experience in shipping digital products. My journey began with a curiosity for how
+									things work on the web, which quickly evolved into a career obsession with
+									creating pixel-perfect user experiences.
 								</p>
 								<p>
 									I specialize in bridging the gap between design and engineering. Whether it&apos;s
 									architecting a scalable backend or fine-tuning interaction animations, I bring a
-									holistic approach to every project. I believe the best products are built when form
-									and function work in perfect harmony.
+									holistic approach to every project. I believe the best products are built when
+									form and function work in perfect harmony.
 								</p>
 								<p>
 									When I&apos;m not coding, you can find me exploring new coffee shops, contributing
@@ -42,7 +42,7 @@ export function About() {
 							<div className="mt-8 flex flex-wrap gap-4">
 								<div className="flex items-center gap-2 text-sm text-gray-300">
 									<MapPin className="h-4 w-4 text-primary" />
-									Jakarta, Indonesia
+									Tangerang, Indonesia
 								</div>
 								<div className="flex items-center gap-2 text-sm text-gray-300">
 									<Languages className="h-4 w-4 text-primary" />
