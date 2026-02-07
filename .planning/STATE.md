@@ -7,16 +7,17 @@
 
 **Milestone:** v1.2 Backend & Security
 **Phase:** 6 of 9 (CMS Integration)
-**Plan:** 2 of 6 in current phase
+**Plan:** 3 of 6 in current phase
 **Status:** In progress
-**Last activity:** 2026-02-07 - Completed 06-02-PLAN.md
+**Last activity:** 2026-02-07 - Completed 06-03-PLAN.md
 
-**Progress:** ███████░░░░░░░░░░░░░ 38%
+**Progress:** ███████░░░░░░░░░░░░░ 44%
 
 ## Context
 
 **Recent Achievements:**
 - Defined core schemas (Project, Experience, Skill) in Sanity.
+- Added Post, Settings, and Localization schemas.
 - Integrated Sanity Studio (`/studio`) with Next.js App Router.
 
 **Current Focus:**
@@ -26,12 +27,12 @@ Defining remaining schemas (Social, Config) and populating initial content.
 
 - **Lighthouse Score:** 100 (Performance) - *Target*
 - **Bundle Size:** TBD
-- **Requirements Covered:** 2/20 (v1.2)
+- **Requirements Covered:** 3/20 (v1.2)
 
 ## Session Continuity
 
 **Last session:** 2026-02-07
-**Stopped at:** Completed 06-02-PLAN.md
+**Stopped at:** Completed 06-03-PLAN.md
 **Resume file:** None
 
 ## Decisions
@@ -39,6 +40,8 @@ Defining remaining schemas (Social, Config) and populating initial content.
 | 06 | Embedded Studio in /studio route | Simplifies deployment, single codebase |
 | 06 | Centralized schema registration in sanity/schemas/index.ts | Cleaner config management |
 | 06 | Used text type for localized fields temporarily | Localization plugin setup deferred |
+| 06 | Used simple string for Post author field | Author schema pending future plan |
+| 06 | Implemented localized fields as objects | Standard pattern for simple localization |
 
 ## Blockers/Concerns Carried Forward
 None.

@@ -26,8 +26,8 @@ This roadmap transitions the portfolio from a static single-page application to 
 | **CMS-02** | Define schemas for Projects (title, slug, description, tags, images, links). | **Complete** |
 | **CMS-03** | Define schemas for Experience (role, company, date, description). | **Complete** |
 | **CMS-04** | Define schemas for Skills (name, category, icon/image). | **Complete** |
-| **CMS-05** | Define schemas for Blog Posts (title, slug, content/portable text, date). | Pending |
-| **CMS-06** | Define schemas for Site Metadata (SEO title, description, social links). | Pending |
+| **CMS-05** | Define schemas for Blog Posts (title, slug, content/portable text, date). | **Complete** |
+| **CMS-06** | Define schemas for Site Metadata (SEO title, description, social links). | **Complete** |
 
 **Success Criteria:**
 1. Projects, Experience, and Skills sections render content dynamically fetched from Sanity.
