@@ -42,7 +42,7 @@ This roadmap transitions the portfolio from a static single-page application to 
 - [x] 06-04-PLAN.md — Define Skills Schema
 - [x] 06-05-PLAN.md — Define Blog/Meta Schemas
 - [x] 06-06-PLAN.md — Integrate Experience and Skills (Gap Closure)
-- [ ] 06-07-PLAN.md — Create Detail Pages
+- [x] 06-07-PLAN.md — Create Detail Pages
 
 ---
 
@@ -115,7 +115,7 @@ This roadmap transitions the portfolio from a static single-page application to 
 
 | Phase | Goal | Status |
 |-------|------|--------|
-| **6** | CMS Integration | **In Progress** |
-| **7** | Internationalization | **Pending** |
+| **6** | CMS Integration | **Complete** |
+| **7** | Internationalization | **Ready** |
 | **8** | Contact & Interaction | **Pending** |
 | **9** | Optimization & SEO | **Pending** |
