@@ -7,17 +7,18 @@
 
 **Milestone:** v1.2 Backend & Security
 **Phase:** 6 of 9 (CMS Integration)
-**Plan:** 3 of 6 in current phase
+**Plan:** 4 of 6 in current phase
 **Status:** In progress
-**Last activity:** 2026-02-07 - Completed 06-03-PLAN.md
+**Last activity:** 2026-02-07 - Completed 06-04-PLAN.md
 
-**Progress:** ███████░░░░░░░░░░░░░ 44%
+**Progress:** ███████░░░░░░░░░░░░░ 46%
 
 ## Context
 
 **Recent Achievements:**
-- Defined core schemas (Project, Experience, Skill) in Sanity.
-- Added Post, Settings, and Localization schemas.
+- Added data fetching layer (`sanity/lib/queries.ts`, `client.ts`).
+- Defined TypeScript interfaces for Sanity content.
+- Defined core schemas (Project, Experience, Skill, Post, Settings) in Sanity.
 - Integrated Sanity Studio (`/studio`) with Next.js App Router.
 
 **Current Focus:**
@@ -27,12 +28,12 @@ Defining remaining schemas (Social, Config) and populating initial content.
 
 - **Lighthouse Score:** 100 (Performance) - *Target*
 - **Bundle Size:** TBD
-- **Requirements Covered:** 3/20 (v1.2)
+- **Requirements Covered:** 4/20 (v1.2)
 
 ## Session Continuity
 
 **Last session:** 2026-02-07
-**Stopped at:** Completed 06-03-PLAN.md
+**Stopped at:** Completed 06-04-PLAN.md
 **Resume file:** None
 
 ## Decisions
@@ -42,6 +43,9 @@ Defining remaining schemas (Social, Config) and populating initial content.
 | 06 | Used text type for localized fields temporarily | Localization plugin setup deferred |
 | 06 | Used simple string for Post author field | Author schema pending future plan |
 | 06 | Implemented localized fields as objects | Standard pattern for simple localization |
+| 06 | Created sanity/env.ts for centralized env vars | Validates env vars and improves developer experience |
+| 06 | Used sanityFetch wrapper for ISR support | Easy integration with Next.js caching |
+| 06 | Used manual type definitions instead of Sanity TypeGen | Simpler setup for initial phase |
 
 ## Blockers/Concerns Carried Forward
 None.
