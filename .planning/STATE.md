@@ -7,11 +7,11 @@
 
 **Milestone:** v1.2 Backend & Security
 **Phase:** 6 of 9 (CMS Integration)
-**Plan:** 5 of 6 in current phase
+**Plan:** 6 of 7 in current phase
 **Status:** In progress
-**Last activity:** 2026-02-07 - Completed 06-05-PLAN.md
+**Last activity:** 2026-02-07 - Completed 06-06-PLAN.md
 
-**Progress:** ████████░░░░░░░░░░░ 50%
+**Progress:** █████████░░░░░░░░░░ 60%
 
 ## Context
 
@@ -20,20 +20,21 @@
 - Added dynamic Projects listing page.
 - Created Blog listing page with PostCard components.
 - Implemented image URL builder (`sanity/lib/image.ts`).
+- Integrated dynamic Experience and Skills sections.
 
 **Current Focus:**
-Integrating dynamic data (Blog details, Project details) and finalizing CMS content.
+Creating Detail Pages for Projects and Blog Posts (06-07-PLAN.md).
 
 ## Performance Metrics
 
 - **Lighthouse Score:** 100 (Performance) - *Target*
 - **Bundle Size:** TBD
-- **Requirements Covered:** 7/20 (v1.2)
+- **Requirements Covered:** 8/20 (v1.2)
 
 ## Session Continuity
 
 **Last session:** 2026-02-07
-**Stopped at:** Completed 06-05-PLAN.md
+**Stopped at:** Completed 06-06-PLAN.md
 **Resume file:** None
 
 ## Decisions
@@ -49,6 +50,8 @@ Integrating dynamic data (Blog details, Project details) and finalizing CMS cont
 | 06 | Moved types to src/types for import resolution | Fixed TS path alias issues in Next.js components |
 | 06 | Created image URL builder helper | Standard pattern for Sanity image handling |
 | 06 | Used server components for data fetching | Improved performance and caching (ISR) |
+| 06 | Used native Intl.DateTimeFormat for dates | Avoided extra dependencies like date-fns |
+| 06 | Implemented icon fallback for dynamic sections | Graceful degradation for missing assets |
 
 ## Blockers/Concerns Carried Forward
 - Detail pages for Projects and Blog Posts needed (links currently point to slugs but pages missing).

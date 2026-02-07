@@ -41,7 +41,7 @@ This roadmap transitions the portfolio from a static single-page application to 
 - [x] 06-03-PLAN.md — Define Experience Schema
 - [x] 06-04-PLAN.md — Define Skills Schema
 - [x] 06-05-PLAN.md — Define Blog/Meta Schemas
-- [ ] 06-06-PLAN.md — Integrate Experience and Skills (Gap Closure)
+- [x] 06-06-PLAN.md — Integrate Experience and Skills (Gap Closure)
 - [ ] 06-07-PLAN.md — Create Detail Pages
 
 ---
