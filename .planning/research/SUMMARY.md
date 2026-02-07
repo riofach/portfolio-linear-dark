@@ -1,55 +1,88 @@
-# Research Summary: Backend & Security Integration
+# Research Synthesis
 
-**Project:** Portfolio Linear Dark
-**Researched:** February 7, 2026
-**Overall confidence:** HIGH
+**Date:** February 07, 2026
+**Synthesized from:**
+- STACK.md
+- FEATURES.md
+- ARCHITECTURE.md
+- PITFALLS.md
 
 ## Executive Summary
 
-To transform the portfolio from a static showcase into a dynamic, global platform, we will integrate **Sanity (CMS)**, **Resend (Email)**, and **next-intl (i18n)**. This stack leverages Next.js 16's App Router capabilities (Server Actions, Metadata API) to minimize client-side JavaScript while delivering a robust editing experience and secure communication channel.
+The research recommends evolving the portfolio from a static Next.js site to a **dynamic, content-driven application** powered by **Next.js 16 (App Router)** and **Sanity (Headless CMS)**. This architecture allows for real-time content updates, multi-language support, and professional communication features without redeploying code.
 
-The research confirms that **Sanity v5** and **next-intl v4** are the optimal choices for 2026, offering native support for React Server Components and "Visual Editing" which aligns perfectly with the project's high-polish "Linear-style" aesthetic.
+The proposed stack leverages the latest React 19 ecosystem, using **Server Components** for performance and SEO, **Server Actions** for secure form handling (integrated with **Resend**), and **next-intl** for robust internationalization. This approach balances "enterprise-grade" best practices with the simplicity needed for a personal portfolio.
+
+Key risks center around the complexity of moving from static imports to async data fetching and the security implications of exposing Server Actions. However, these are manageable with a strict "Repository Pattern" architecture and proper input validation.
 
 ## Key Findings
 
-**Stack:** Sanity (CMS), Resend (Email), next-intl (i18n), Zod (Validation).
-**Architecture:** Move from static `src/data` to a **Service Layer** pattern fetching from Sanity.
-**Critical pitfall:** Unprotected Server Actions (spam risk) and improper i18n middleware configuration (blocking static assets).
+### Technology Stack
+- **Core:** Next.js 16.1 (App Router), React 19, TypeScript 5.7, Tailwind 4.
+- **CMS:** Sanity v5 (Headless) + `next-sanity`. Best-in-class App Router integration.
+- **Email:** Resend + React Email (replaces Nodemailer).
+- **i18n:** `next-intl` (Middleware-based routing).
+- **Validation:** Zod + React Hook Form.
+
+### Feature Priorities
+- **Must-Have (MVP):**
+  1. **CMS Integration:** Project showcase and experience data managed via Sanity Studio.
+  2. **Contact Form:** Functional server-side email sending with validation.
+  3. **i18n Routing:** `/en` and `/id` structure with localized UI shells.
+  4. **SEO:** Dynamic sitemap and metadata generation.
+- **Defer:** Dynamic OpenGraph generation, complex email templates, and full content localization (start with UI strings only).
+
+### Architecture
+- **Shift to Dynamic:** Move from `src/data/*.ts` imports to `src/services/cms/*.ts` async fetches.
+- **Repository Pattern:** Decouple UI components from Sanity SDK using a service layer.
+- **Component Boundaries:**
+  - **Pages:** Fetch data, define metadata.
+  - **Components:** Receive data as props (dumb/pure).
+  - **Server Actions:** Handle mutations (email sending) with Zod validation.
+
+### Critical Pitfalls
+- **Security:** Server Actions are public endpoints; they require explicit Zod validation and rate limiting.
+- **Performance:** i18n Middleware must be configured to ignore static assets (`_next`, images) to prevent 404s and latency.
+- **Data Fetching:** Avoid calling Route Handlers from Server Components; use direct service function calls instead.
 
 ## Implications for Roadmap
 
-Based on research, suggested phase structure for this milestone:
+The research suggests a 4-phase execution plan to handle the architectural shift systematically.
 
-1.  **Phase 2.1: CMS Foundation** - Setup Sanity Studio and `next-sanity`.
-    -   *Rationale:* Content drives the schema. We need the CMS ready before we can migrate data.
-    -   *Addresses:* Dynamic Project Content (Features).
+### Phase 1: Foundation & CMS
+**Goal:** Establish the data layer and migrate content.
+- **Tasks:** Initialize Sanity, define schemas (Project, Experience), create the `src/services/cms` layer, and refactor main components to accept dynamic data.
+- **Research Flag:** None (Standard Sanity patterns).
 
-2.  **Phase 2.2: Content Migration & Fetching** - Replace `src/data/*.ts` with Sanity fetches.
-    -   *Rationale:* Validates the CMS integration without changing the UI structure yet.
-    -   *Avoids:* Mixed data sources (Pitfall).
+### Phase 2: Internationalization (i18n)
+**Goal:** Restructure routing for multi-language support.
+- **Tasks:** Install `next-intl`, implement Middleware, move pages to `[locale]` directory, and translate static UI text.
+- **Pitfall Prevention:** Carefully configure middleware matchers to avoid blocking static assets.
 
-3.  **Phase 2.3: Internationalization (i18n)** - Implement `next-intl` routing.
-    -   *Rationale:* This changes the URL structure (`/[locale]`). Doing this *after* data is ready makes testing easier.
-    -   *Addresses:* Localized Content (Features).
+### Phase 3: Interactive Features
+**Goal:** Enable user interaction.
+- **Tasks:** Implement `sendEmail` Server Action with Resend, build the Contact Form, and add Zod validation/Rate limiting.
+- **Research Flag:** Rate limiting strategy (simple KV vs. Upstash).
 
-4.  **Phase 2.4: Contact & Security** - Server Actions with Resend & Zod.
-    -   *Rationale:* Independent feature. Needs the API keys and server-side logic.
-    -   *Avoids:* Spam/Abuse (Pitfall).
-
-5.  **Phase 2.5: SEO & Polish** - Dynamic Metadata, Sitemap, Robots.
-    -   *Rationale:* The "cherry on top". Depends on final URL structure and content.
-    -   *Addresses:* Discoverability.
+### Phase 4: Optimization & SEO
+**Goal:** Optimize for visibility and performance.
+- **Tasks:** Implement `generateMetadata` for dynamic routes, build `sitemap.ts`, and finalize "Draft Mode" for CMS previews.
+- **Confidence:** High.
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | Sanity v5, Resend v6, next-intl v4 are all stable and well-documented for Next.js 16. |
-| Features | HIGH | Requirements are standard for a portfolio (Form, CMS, SEO). |
-| Architecture | HIGH | App Router patterns (Server Actions, Layouts) are mature. |
-| Pitfalls | HIGH | Common issues (middleware, spam) are well-understood with clear mitigations. |
+| **Stack** | High | Next.js 16 + Sanity is a well-documented, "golden path" combination. |
+| **Features** | High | Table stakes are clear; scope is well-defined. |
+| **Architecture** | High | The Repository Pattern effectively mitigates the risk of tight coupling. |
+| **Pitfalls** | High | Specific, actionable preventions identified for the most common issues. |
 
-## Gaps to Address
+**Gaps:**
+- Specific localization strategy for rich text content in Sanity (field-level vs. document-level translation) needs a quick decision during Phase 1.
 
--   **Deep Localization:** We are assuming "UI strings" are enough for MVP. Full content localization (translating every project description) is a content task, not just tech.
--   **Rate Limiting:** We need to pick a specific strategy (e.g., Upstash) or just use a simple in-memory/database check if traffic is low.
+## Sources
+- Next.js 16 Documentation
+- Sanity.io Next.js Patterns
+- Resend & React Email Docs
+- next-intl Documentation
