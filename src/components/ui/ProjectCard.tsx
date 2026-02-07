@@ -2,9 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Project } from "@/data/projects";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "motion/react";
+import { Project } from "@/types/sanity";
+import { urlFor } from "../../../sanity/lib/image";
 
 const MotionLink = motion.create(Link);
 
@@ -13,9 +14,12 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project }: ProjectCardProps) {
+  const imageUrl = project.thumbnail ? urlFor(project.thumbnail).width(800).height(450).url() : "/placeholder.png";
+  const projectLink = project.demoUrl || project.repoUrl || "#";
+
   return (
     <MotionLink
-      href={project.link}
+      href={projectLink}
       target="_blank"
       rel="noopener noreferrer"
       className="group relative block overflow-hidden rounded-2xl border border-white/10 bg-card-dark transition-colors hover:border-primary/50 hover:shadow-[0_0_30px_rgba(91,19,236,0.1)] h-full"
@@ -23,17 +27,19 @@ export function ProjectCard({ project }: ProjectCardProps) {
     >
       <div className="aspect-video w-full overflow-hidden bg-gray-900 relative">
         <div className="absolute inset-0 bg-gradient-to-t from-card-dark to-transparent z-10 opacity-60"></div>
-        <Image
-          src={project.image}
-          alt={project.title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-        />
+        {project.thumbnail && (
+          <Image
+            src={imageUrl}
+            alt={project.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
       </div>
       
       <div className="relative z-20 -mt-12 p-8 pt-0">
         <div className="mb-4 flex flex-wrap gap-2">
-          {project.tags.map((tag) => (
+          {project.tags?.map((tag) => (
             <span 
               key={tag} 
               className="rounded-full bg-white/5 border border-white/10 px-3 py-1 text-xs font-medium text-gray-300"

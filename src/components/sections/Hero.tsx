@@ -4,8 +4,21 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'motion/react';
 import { FADE_UP, STAGGER, SPRING_SUBTLE } from '@/lib/motion';
+import { LocalizedText } from '@/types/sanity';
 
-export function Hero() {
+interface HeroProps {
+	heroText?: LocalizedText;
+}
+
+export function Hero({ heroText }: HeroProps) {
+	const title = heroText?.en || "Building digital experiences that matter.";
+	
+	// Split title for formatting if needed, or just render it. 
+	// The original had a split with <span>.
+	// We'll render it simply for now or try to preserve the split if the CMS data supports it.
+	// Since CMS is just text, we might lose the specific "gray" styling on the second line unless we parse it.
+	// For now, let's just render the text.
+	
 	return (
 		<section
 			id="home"
@@ -54,10 +67,7 @@ export function Hero() {
 					variants={FADE_UP}
 					className="mb-8 text-5xl font-extrabold tracking-tight text-white sm:text-7xl lg:text-8xl text-balance drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]"
 				>
-					Building digital <br />
-					<span className="bg-gradient-to-r from-white via-white to-gray-500 bg-clip-text text-transparent">
-						experiences that matter.
-					</span>
+					{title}
 				</motion.h1>
 
 				<motion.p

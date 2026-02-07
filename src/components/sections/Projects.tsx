@@ -6,10 +6,14 @@ import { ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
 import { StaggerContainer } from "@/components/ui/motion-wrapper";
 import { FADE_UP } from "@/lib/motion";
-import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/ui/ProjectCard";
+import { Project } from "@/types/sanity";
 
-export function Projects() {
+interface ProjectsProps {
+  projects: Project[];
+}
+
+export function Projects({ projects }: ProjectsProps) {
   return (
     <section className="py-24 px-6 lg:px-8" id="work">
       <div className="mx-auto max-w-7xl">
@@ -33,7 +37,7 @@ export function Projects() {
         </div>
         <StaggerContainer className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
           {projects.map((project) => (
-            <motion.div key={project.title} variants={FADE_UP}>
+            <motion.div key={project._id} variants={FADE_UP}>
               <ProjectCard project={project} />
             </motion.div>
           ))}
