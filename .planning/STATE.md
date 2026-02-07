@@ -1,40 +1,39 @@
-# Project State: Portfolio Linear Dark
+# Project State
 
-## Project Reference
-
-See: .planning/PROJECT.md (updated 2026-02-06)
-
-**Core value:** A polished, high-performance, and visually engaging online presence showcasing skills/projects with "linear-dark" aesthetic and subtle motion.
-**Current focus:** Planning v1.2 Backend & Security
+**Project:** Portfolio Linear Dark
+**Core Value:** A polished, high-performance, and visually engaging online presence showcasing skills/projects with "linear-dark" aesthetic and subtle motion.
 
 ## Current Position
 
-Phase: 6 of 7 (Backend Integration)
-Plan: Not started
-Status: Ready to plan
-Last activity: 2026-02-06 — v1.1 milestone complete
+**Milestone:** v1.2 Backend & Security
+**Phase:** 6 - CMS Integration
+**Status:** Planning / Ready to Start
+**Progress:** [....................] 0%
 
-Progress: █░░░░░░░░░ 10% (v1.2 started)
+## Context
 
-## Accumulated Context
+**Recent Achievements:**
+- Shipped v1.1 (Projects Archive) with responsive grid and visual parity to reference.
+- Validated high-performance SPA architecture.
 
-- **Constraint:** Use `src/components/layout/*` for Header/Footer (don't duplicate).
-- **Constraint:** Remove filters from Projects Archive design.
-- **Reference:** `_reference/projects.html` for layout/visuals.
+**Current Focus:**
+Integrating Sanity CMS to make the portfolio dynamic. We are moving from static `data/*.ts` files to a hosted content backend. This is the foundational step for v1.2.
 
-## Decisions
+## Performance Metrics
 
-| Phase | Decision | Rationale |
-|-------|----------|-----------|
-| 05 | Used `/#section` for anchor links | Ensures navigation works from both home (scroll) and other pages (redirect). |
-| 05 | Removed filters from Archive | Explicit design requirement for v1.1. |
-| 05 | Visual-only "Load More" | Pagination out of scope for small project count. |
-
-## Blockers/Concerns Carried Forward
-- Technical Debt: Minor nested `<main>` tags in `src/app/allprojects/page.tsx`.
+- **Lighthouse Score:** 100 (Performance) - *Target*
+- **Bundle Size:** TBD (Monitoring impact of Sanity/i18n)
+- **Requirements Covered:** 0/20 (v1.2)
 
 ## Session Continuity
 
-Last session: 2026-02-06
-Stopped at: v1.1 milestone complete
-Resume file: None
+**Next Action:**
+Begin Phase 6 Planning.
+`> /gsd-plan-phase 6`
+
+**Active Blockers:**
+None.
+
+**Notes:**
+- Ensure Sanity schemas map cleanly to existing UI components to minimize refactoring.
+- Keep "linear-dark" styling consistent when rendering dynamic content.
