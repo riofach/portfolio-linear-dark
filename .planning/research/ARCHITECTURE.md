@@ -1,204 +1,211 @@
-# Architecture Research
+# Architecture Patterns: Backend & Security Integration
 
-**Domain:** Personal Portfolio Website
-**Researched:** 2026-02-05
-**Confidence:** HIGH
+**Domain:** Portfolio Website (Next.js 16)
+**Researched:** 2026-02-07
+**Context:** Integration of Headless CMS, Email, and i18n into existing App Router architecture.
 
-## Standard Architecture
+## Recommended Architecture
 
-### System Overview
+The architecture shifts from **Static Data (Client Import)** to **Dynamic/ISR Data (Server Fetch)**.
 
-For a modern personal portfolio, the architecture is a **Single Page Application (SPA) hybrid** using Next.js App Router. It leans heavily on Server Components for initial load performance and SEO, while utilizing Client Components for interactive elements (Motion animations, form handling).
+```mermaid
+graph TD
+    User[User Browser]
+    
+    subgraph "Next.js 16 App Router"
+        Middleware[Middleware (i18n routing)]
+        Layout[RootLayout / [locale] Layout]
+        Page[Page (Server Component)]
+        Action[Server Action (Email)]
+        ClientComp[Client Components (UI)]
+    end
+    
+    subgraph "External Services"
+        CMS[Headless CMS (Sanity)]
+        Email[Email Service (Resend)]
+    end
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                       Browser / Client                       │
-├─────────────────────────────────────────────────────────────┤
-│  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐     │
-│  │    Layout    │───│   Template   │───│     Page     │     │
-│  │ (Persistent) │   │ (Animations) │   │   (Content)  │     │
-│  └──────┬───────┘   └──────┬───────┘   └──────┬───────┘     │
-│         │                  │                  │             │
-│   ┌─────▼──────┐     ┌─────▼──────┐     ┌─────▼──────┐      │
-│   │ Navigation │     │ Framer Motion│   │  Sections  │      │
-│   └────────────┘     └────────────┘     └────────────┘      │
-├─────────────────────────────────────────────────────────────┤
-│                        Next.js Server                        │
-├─────────────────────────────────────────────────────────────┤
-│  ┌──────────────┐   ┌──────────────┐   ┌──────────────┐     │
-│  │    Render    │   │ Server Action│   │  Static Gen  │     │
-│  │     Tree     │   │   (Email)    │   │    (SSG)     │     │
-│  └──────────────┘   └──────┬───────┘   └──────────────┘     │
-│                            │                                │
-│                     ┌──────▼───────┐                        │
-│                     │ Email Service│                        │
-│                     │(Resend/SMTP) │                        │
-│                     └──────────────┘                        │
-└─────────────────────────────────────────────────────────────┘
+    User --> Middleware
+    Middleware --> Layout
+    Layout --> Page
+    Page -- "1. Fetch Content" --> CMS
+    Page -- "2. Pass Data (Props)" --> ClientComp
+    ClientComp -- "3. Submit Form" --> Action
+    Action -- "4. Send API Req" --> Email
 ```
 
-### Component Responsibilities
+### Component Boundaries
 
-| Component | Responsibility | Typical Implementation |
-|-----------|----------------|------------------------|
-| **Root Layout** | Global styles, fonts, metadata, providers | `app/layout.tsx` with `<html>` and `<body>` tags. |
-| **Motion Template** | Page transition orchestration | `app/template.tsx` wrapping children in `<AnimatePresence>`. |
-| **Section Components** | Content blocks (Hero, About, Projects) | Client Components (if animated) or Server Components (if static text). |
-| **UI Primitives** | Reusable atoms (Buttons, Cards, Inputs) | `components/ui/` (often standard shadcn/ui patterns). |
-| **Contact Action** | Handling form submission security | `app/actions.ts` (Next.js Server Action). |
-
-## Recommended Project Structure
-
-We follow a **Feature-Sliced/Modular** hybrid standard for Next.js 15+ portfolios.
-
-```
-src/
-├── app/
-│   ├── layout.tsx         # Global layout (Providers, Metadata)
-│   ├── template.tsx       # Page transitions (Framer Motion wrapper)
-│   ├── page.tsx           # Main single-page scroll entry
-│   ├── globals.css        # Tailwind directives & global variables
-│   └── actions.ts         # Server Actions (Contact form logic)
-├── components/
-│   ├── ui/                # Generic UI primitives (Button, Input, Card)
-│   │   ├── button.tsx
-│   │   └── card.tsx
-│   ├── layout/            # Layout-specific (Header, Footer, Nav)
-│   │   ├── navbar.tsx
-│   │   └── footer.tsx
-│   └── sections/          # Major homepage sections
-│       ├── hero.tsx
-│       ├── about.tsx
-│       ├── projects.tsx
-│       ├── skills.tsx
-│       └── contact.tsx
-├── lib/
-│   ├── utils.ts           # cn() helper for Tailwind
-│   └── animations.ts      # Shared Framer Motion variants
-├── hooks/
-│   └── use-scroll-spy.ts  # For active nav link highlighting
-└── public/
-    ├── images/            # Project screenshots
-    └── resume.pdf         # Downloadable assets
-```
-
-### Structure Rationale
-
-- **`src/app`**: Keeps routing logic separate from business logic.
-- **`components/sections`**: Portfolios are "Section-heavy". Grouping big blocks like `Hero` or `About` makes the `page.tsx` clean and readable (just a composition of sections).
-- **`components/ui`**: Separates reusable "atoms" from specific "organisms". This is critical if using shadcn/ui.
-- **`lib/animations.ts`**: Centralizing motion variants (`fadeIn`, `slideUp`) ensures consistency across the site and reduces code duplication.
-
-## Architectural Patterns
-
-### Pattern 1: The Motion Template Wrapper
-
-**What:** Using `template.tsx` instead of `layout.tsx` for transitions.
-**When to use:** When you need animations that trigger on route navigation (or in a single-page app, when mounting distinct views).
-**Trade-offs:** `template.tsx` remounts on every navigation, which is perfect for exit/enter animations but bad if you want to preserve state (like a chat window). For a portfolio, it's usually desired.
-
-**Example:**
-```typescript
-// src/app/template.tsx
-'use client'
-
-import { motion } from 'framer-motion'
-
-export default function Template({ children }: { children: React.ReactNode }) {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 0, y: 20 }}
-      transition={{ ease: 'easeInOut', duration: 0.5 }}
-    >
-      {children}
-    </motion.div>
-  )
-}
-```
-
-### Pattern 2: Component-Level Animation Composition
-
-**What:** Defining animation "variants" in a separate file and passing them to components.
-**When to use:** To avoid cluttering JSX with complex `initial={{...}} animate={{...}}` objects.
-
-**Example:**
-```typescript
-// src/lib/animations.ts
-export const fadeInUp = {
-  initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5 }
-}
-
-// src/components/sections/Hero.tsx
-import { motion } from 'framer-motion'
-import { fadeInUp } from '@/lib/animations'
-
-export const Hero = () => (
-  <motion.section {...fadeInUp}>
-    <h1>Hello</h1>
-  </motion.section>
-)
-```
-
-## Data Flow
-
-### Contact Form Flow (Server Actions)
-
-Portfolios rarely have complex data, but the "Contact" form is the dynamic exception. We use Next.js Server Actions for this to avoid creating a separate API route.
-
-```
-[User] -> [ContactForm (Client Component)]
-               ↓ (onSubmit)
-        [Server Action (app/actions.ts)]
-               ↓ (Validates with Zod)
-        [Email Service (Resend/NodeMailer)]
-               ↓ (Returns success/error)
-        [ContactForm] -> [Toast Notification]
-```
-
-## Scaling Considerations
-
-For a personal portfolio, scaling is rarely about "millions of users" and more about "content maintainability."
-
-| Scale | Architecture Adjustments |
-|-------|--------------------------|
-| **Simple (MVP)** | Hardcoded content directly in components (`<p>I build apps...</p>`). |
-| **Maintainable** | Extract data to JSON/TS constants (`src/data/projects.ts`). Recommended for most portfolios. |
-| **Dynamic** | Fetch content from a CMS (Sanity, Notion) or Markdown files (`content/projects/*.md`). Overkill for a simple "About Me" but good if you blog frequently. |
-
-## Anti-Patterns
-
-### Anti-Pattern 1: "Use Client" Everywhere
-
-**What people do:** Marking the root `layout.tsx` or `page.tsx` as `'use client'` to make animations work easily.
-**Why it's wrong:** It forces the entire application to be a client-side bundle, losing Next.js optimization benefits (SEO, initial load speed).
-**Do this instead:** Isolate animated parts into smaller components (e.g., `<AnimatedHeading />`) or use `template.tsx` for page-level transitions.
-
-### Anti-Pattern 2: Prop-Drilling Configuration
-
-**What people do:** Passing `theme`, `links`, or `authorName` down through 5 layers of components.
-**Why it's wrong:** Makes refactoring painful.
-**Do this instead:** Use specific constants files (e.g., `src/config/site.ts`) and import them directly where needed.
-
-## Integration Points
-
-### External Services
-
-| Service | Integration Pattern | Notes |
-|---------|---------------------|-------|
-| **Resend / SendGrid** | Server Action | Never expose API keys in client-side code. Use env vars on server. |
-| **Google Analytics** | `next/third-parties` | Use the optimized package provided by Next.js. |
-
-## Sources
-
-- [Next.js App Router Documentation](https://nextjs.org/docs)
-- [Framer Motion Guide for Next.js](https://www.framer.com/motion/nextjs/)
-- [Best Practices for Organizing Next.js](https://dev.to/bajrayejoon/best-practices-for-organizing-your-nextjs-15-2025-53ji)
-- [Common Framer Motion Pitfalls](https://www.imcorfitz.com/posts/adding-framer-motion-page-transitions-to-next-js-app-router)
+| Component Type | Responsibility | New Behavior |
+|----------------|----------------|--------------|
+| **Page (Server)** | Data Fetching, Metadata | Fetches from CMS, generates Metadata, passes data to Client Components. |
+| **Client Component** | UI Interaction, Animation | Receives data as props. No direct imports from `src/data`. |
+| **Server Action** | Form Handling, Mutations | Validates input (Zod), interacts with external APIs (Resend). |
+| **Middleware** | Routing, Locale Detection | Redirects to `/[locale]` paths based on headers/cookie. |
 
 ---
-*Architecture research for: Personal Portfolio Website*
-*Researched: 2026-02-05*
+
+## 1. CMS Integration (Headless)
+
+**Recommendation:** **Sanity.io** (or similar Headless CMS like Contentful/Strapi)
+**Why:**
+- Excellent Next.js 16 integration (`next-sanity`).
+- "Visual Editing" capabilities (overlays on live site).
+- Free tier suffices for portfolio.
+- Flexible schema matches current `src/data` structure easily.
+
+### Integration Strategy: Repository Pattern
+Avoid coupling components directly to Sanity SDK. Use a service layer.
+
+**New Structure:**
+- `src/services/cms/client.ts` -> configured Sanity client.
+- `src/services/cms/queries.ts` -> GROQ queries.
+- `src/services/cms/types.ts` -> Types generated from schema.
+- `src/services/cms/index.ts` -> Exported functions (e.g., `getProjects()`, `getAbout()`).
+
+**Data Flow:**
+1. **Define Schema:** Replicate `src/data/projects.ts` interface in Sanity.
+2. **Fetch:** In `src/app/[locale]/page.tsx`:
+   ```typescript
+   import { getProjects } from "@/services/cms";
+   
+   export default async function Home({ params }: { params: { locale: string } }) {
+     const projects = await getProjects(params.locale); // Pass locale for localized content
+     return <ProjectsSection data={projects} />;
+   }
+   ```
+3. **Caching:** Use `unstable_cache` or `fetch` tags in the service layer for ISR.
+
+### Migration Steps
+1. Create Sanity project.
+2. Define schemas for `Project`, `Experience`, `Skill`, `GeneralConfig`.
+3. Create `src/services/cms`.
+4. Refactor `src/components/sections/Projects.tsx` to accept `data` prop instead of importing.
+
+---
+
+## 2. Internationalization (i18n)
+
+**Recommendation:** **next-intl**
+**Why:**
+- Built for App Router (Server Components support).
+- Type-safe messages.
+- Middleware-based routing is standard for SEO.
+
+### Architecture Changes
+
+1. **Routing:**
+   - Move `src/app/page.tsx` → `src/app/[locale]/page.tsx`
+   - Move `src/app/layout.tsx` → `src/app/[locale]/layout.tsx`
+   - Create new `src/app/layout.tsx` (Root) that just renders children (required by Next.js) or handles redirects.
+
+2. **Middleware:**
+   - Create `src/middleware.ts` to handle `en`, `id`, etc.
+   
+3. **Content Strategy:**
+   - **Static UI Text (Nav, Buttons):** Store in `messages/en.json`, `messages/id.json`.
+   - **Dynamic Content (Projects, Bio):** Store in **CMS** with localized fields (e.g., `title` vs `title_id`).
+
+4. **Component Usage:**
+   - **Server Components:** `useTranslations` from `next-intl`.
+   - **Client Components:** Wrap tree in `NextIntlClientProvider` in `[locale]/layout.tsx`.
+
+---
+
+## 3. Email Integration
+
+**Recommendation:** **Resend** + **React Email**
+**Why:**
+- Industry standard for Next.js.
+- Developer-friendly SDK.
+- High deliverability.
+
+### Integration Strategy: Server Actions
+
+**Current:** `src/components/sections/Contact.tsx` uses `onSubmit` with `setTimeout`.
+**New:**
+1. Create `src/actions/send-email.ts`:
+   ```typescript
+   "use server";
+   import { Resend } from 'resend';
+   import { formSchema } from '@/lib/schemas'; // Move Zod schema here
+   
+   export async function sendEmail(formData: FormData) {
+     // 1. Validate with Zod
+     // 2. Rate limit (optional)
+     // 3. Send via Resend
+     // 4. Return success/error
+   }
+   ```
+2. Update `Contact.tsx` to use `useTransition` or `useFormStatus` (if using native forms) or keep `react-hook-form` and call the server action in `onSubmit`.
+
+---
+
+## 4. SEO Architecture
+
+**Strategy:** Dynamic Metadata & Sitemap
+
+1. **Metadata:**
+   - In `src/app/[locale]/layout.tsx`: Define base metadata (title template, open graph).
+   - In `src/app/[locale]/page.tsx`:
+     ```typescript
+     export async function generateMetadata({ params }) {
+       const homeData = await getHomeData(params.locale);
+       return {
+         title: homeData.title,
+         description: homeData.summary,
+         alternates: {
+           languages: {
+             'en': '/en',
+             'id': '/id',
+           },
+         },
+       };
+     }
+     ```
+
+2. **Sitemap (`src/app/sitemap.ts`):**
+   - Must now be `async`.
+   - Fetch all dynamic routes (if any, e.g., blog posts) from CMS.
+   - Generate entries for all locales.
+
+---
+
+## Build Order & Dependencies
+
+To minimize breakage, follow this order:
+
+1.  **Foundation (CMS):**
+    *   Set up CMS schemas.
+    *   Create `src/services/cms`.
+    *   Refactor components to accept props (dumb components).
+    *   *Result:* App still works, but data comes from CMS.
+
+2.  **Structure (i18n):**
+    *   Install `next-intl`.
+    *   Move pages to `[locale]`.
+    *   Add middleware.
+    *   *Result:* URLs change to `/en`, content is still English (mostly).
+
+3.  **Integration (Email):**
+    *   Implement Server Action.
+    *   Connect Contact form.
+    *   *Result:* Working contact form.
+
+4.  **Optimization (SEO):**
+    *   Add dynamic metadata.
+    *   Add sitemap/robots.
+    *   *Result:* Production ready.
+
+## Pitfalls to Avoid
+
+*   **Mixed Data Sources:** Don't keep some projects in `data.ts` and some in CMS. Migrate 100%.
+*   **Client-Side Fetching:** Avoid `useEffect` for CMS data. Use Server Components.
+*   **Middleware Bloat:** Keep middleware simple (matcher regex). Don't fetch CMS data in middleware.
+*   **Deep Prop Drilling:** If prop drilling becomes annoying with i18n/CMS data, use Context (for global settings) or Composition (passing slots).
+
+## Sources
+*   Next.js 16 Docs (Server Actions, Metadata)
+*   next-intl Documentation (App Router Setup)
+*   Sanity.io Next.js Toolkit Documentation
+*   Resend Documentation

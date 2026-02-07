@@ -1,127 +1,55 @@
-# Project Research Summary
+# Research Summary: Backend & Security Integration
 
 **Project:** Portfolio Linear Dark
-**Domain:** Personal Portfolio Website
-**Researched:** 2026-02-05
-**Confidence:** MEDIUM
+**Researched:** February 7, 2026
+**Overall confidence:** HIGH
 
 ## Executive Summary
 
-The research indicates that a "Linear-style" personal portfolio should be built as a highly polished, performance-oriented Single Page Application (SPA) hybrid using Next.js 16. The focus is on specific, subtle micro-interactions, dark mode aesthetics, and high performance rather than complex data handling.
+To transform the portfolio from a static showcase into a dynamic, global platform, we will integrate **Sanity (CMS)**, **Resend (Email)**, and **next-intl (i18n)**. This stack leverages Next.js 16's App Router capabilities (Server Actions, Metadata API) to minimize client-side JavaScript while delivering a robust editing experience and secure communication channel.
 
-The recommended approach combines Next.js App Router for structure and performance with Tailwind CSS v4 for styling and Motion for the signature "Linear" feel. This architecture leverages Server Components for the initial shell and content, while strategically using Client Components for the rich interactive elements users expect from this aesthetic.
-
-Key risks revolve around over-engineering the state management and compromising performance with unoptimized assets or heavy animations. The roadmap is designed to establish the visual foundation first, then layer in content and interactivity to ensure the "feel" is correct from the start.
+The research confirms that **Sanity v5** and **next-intl v4** are the optimal choices for 2026, offering native support for React Server Components and "Visual Editing" which aligns perfectly with the project's high-polish "Linear-style" aesthetic.
 
 ## Key Findings
 
-### Recommended Stack
-
-**Core technologies:**
-- **Next.js 16:** Framework — Chosen for Turbopack speed, reliable Server Components, and standard industry adoption.
-- **Tailwind CSS v4:** Styling — Newest version with "Oxide" engine for zero-config, high-performance styling essential for the minimal aesthetic.
-- **Motion (v12):** Animation — The gold standard for React animations, required for the complex layout transitions and micro-interactions.
-- **shadcn/ui:** UI Components — Provides the accessible, unstyled base components that match the "Linear" look perfectly.
-
-### Expected Features
-
-*(Inferred from Domain Standards - Source file missing)*
-
-**Must have (table stakes):**
-- **Hero Section:** Strong visual introduction with clear value proposition.
-- **Projects Showcase:** Interactive gallery or list of work/case studies.
-- **About Me:** Professional bio and skills overview.
-- **Contact:** Functional form or clear contact methods.
-
-**Should have (competitive):**
-- **Dark/Light Mode:** Seamless theme switching (Linear style implies excellent dark mode).
-- **Micro-interactions:** Hover states, scroll reveals, and smooth transitions.
-- **Resume Download:** Easy access to professional CV.
-
-**Defer (v2+):**
-- **CMS Integration:** Hardcoded content is sufficient for V1.
-- **Blog:** Can be added later if content strategy requires it.
-
-### Architecture Approach
-
-The architecture is a **Hybrid SPA** using Next.js App Router.
-
-**Major components:**
-1. **Root Layout (`layout.tsx`):** Handles global providers, fonts (Geist Sans), and metadata.
-2. **Motion Template (`template.tsx`):** Manages page transitions and exit animations, critical for the "app-like" feel.
-3. **Section Components:** Modular blocks (Hero, Projects) that compose the main page, keeping `page.tsx` clean.
-
-### Critical Pitfalls
-
-*(Inferred from Domain Standards - Source file missing)*
-
-1. **Over-engineering State:** Avoid Redux/Zustand. Use simple URL state (`nuqs`) or local state.
-2. **Animation Performance:** Heavy animations can cause jank. Use `Motion` efficiently and avoid animating layout properties where possible.
-3. **Asset Optimization:** Large images can kill load times. Use Next.js `<Image>` and optimize standard assets.
+**Stack:** Sanity (CMS), Resend (Email), next-intl (i18n), Zod (Validation).
+**Architecture:** Move from static `src/data` to a **Service Layer** pattern fetching from Sanity.
+**Critical pitfall:** Unprotected Server Actions (spam risk) and improper i18n middleware configuration (blocking static assets).
 
 ## Implications for Roadmap
 
-Based on research, suggested phase structure:
+Based on research, suggested phase structure for this milestone:
 
-### Phase 1: Foundation & Design System
-**Rationale:** The "Linear" look relies heavily on the correct setup of fonts, tailwind config, and base UI components.
-**Delivers:** Functional Next.js 16 app, Tailwind v4 configured, Geist font, basic layout shell.
-**Uses:** Next.js, Tailwind v4, shadcn/ui.
-**Avoids:** "Fighting the framework" later by establishing correct patterns early.
+1.  **Phase 2.1: CMS Foundation** - Setup Sanity Studio and `next-sanity`.
+    -   *Rationale:* Content drives the schema. We need the CMS ready before we can migrate data.
+    -   *Addresses:* Dynamic Project Content (Features).
 
-### Phase 2: Core Sections & Layout
-**Rationale:** Building the static content blocks first allows for content validation before complex animation.
-**Delivers:** Hero, About, and Projects sections (static).
-**Implements:** Section component architecture.
+2.  **Phase 2.2: Content Migration & Fetching** - Replace `src/data/*.ts` with Sanity fetches.
+    -   *Rationale:* Validates the CMS integration without changing the UI structure yet.
+    -   *Avoids:* Mixed data sources (Pitfall).
 
-### Phase 3: Motion & Interactivity
-**Rationale:** Layering motion on top of a solid structure ensures performance and maintainability.
-**Delivers:** Page transitions, scroll animations, interactive project cards.
-**Uses:** Motion (v12).
-**Avoids:** Animation performance pitfalls.
+3.  **Phase 2.3: Internationalization (i18n)** - Implement `next-intl` routing.
+    -   *Rationale:* This changes the URL structure (`/[locale]`). Doing this *after* data is ready makes testing easier.
+    -   *Addresses:* Localized Content (Features).
 
-### Phase 4: Contact & Polish
-**Rationale:** Final functional features and visual polish.
-**Delivers:** Working contact form (Server Actions), final responsive tweaks, SEO metadata.
-**Implements:** Server Actions for email.
+4.  **Phase 2.4: Contact & Security** - Server Actions with Resend & Zod.
+    -   *Rationale:* Independent feature. Needs the API keys and server-side logic.
+    -   *Avoids:* Spam/Abuse (Pitfall).
 
-### Phase Ordering Rationale
-
-- **Foundation first:** Tailwind v4 and Next.js 16 are new; getting them stable is priority #1.
-- **Content before Motion:** It's easier to animate existing content than to build content inside complex animation wrappers.
-- **Interactivity last:** "Linear feel" comes from tuning interactions, which requires the elements to be in place.
-
-### Research Flags
-
-Phases likely needing deeper research during planning:
-- **Phase 3 (Motion):** Specific "Linear-style" transition recipes might need research if standard fades aren't enough.
+5.  **Phase 2.5: SEO & Polish** - Dynamic Metadata, Sitemap, Robots.
+    -   *Rationale:* The "cherry on top". Depends on final URL structure and content.
+    -   *Addresses:* Discoverability.
 
 ## Confidence Assessment
 
 | Area | Confidence | Notes |
 |------|------------|-------|
-| Stack | HIGH | Detailed stack research available (Next.js 16, Tailwind v4). |
-| Features | MEDIUM | Inferred from domain standards (missing source file). |
-| Architecture | HIGH | Clear architectural direction for Hybrid SPA. |
-| Pitfalls | MEDIUM | Inferred from domain standards (missing source file). |
+| Stack | HIGH | Sanity v5, Resend v6, next-intl v4 are all stable and well-documented for Next.js 16. |
+| Features | HIGH | Requirements are standard for a portfolio (Form, CMS, SEO). |
+| Architecture | HIGH | App Router patterns (Server Actions, Layouts) are mature. |
+| Pitfalls | HIGH | Common issues (middleware, spam) are well-understood with clear mitigations. |
 
-**Overall confidence:** MEDIUM
+## Gaps to Address
 
-### Gaps to Address
-
-- **Features List:** explicitly confirm strict feature requirements with user if they differ from standard portfolio.
-- **Content Strategy:** Decide if content is hardcoded (recommended) or needs MDX setup during Phase 2.
-
-## Sources
-
-### Primary (HIGH confidence)
-- `STACK.md` — Detailed stack analysis.
-- `ARCHITECTURE.md` — System design and component patterns.
-
-### Secondary (MEDIUM confidence)
-- Domain knowledge of "Personal Portfolio Website" standards.
-- Next.js and Tailwind CSS official documentation (referenced in research).
-
----
-*Research completed: 2026-02-05*
-*Ready for roadmap: yes*
+-   **Deep Localization:** We are assuming "UI strings" are enough for MVP. Full content localization (translating every project description) is a content task, not just tech.
+-   **Rate Limiting:** We need to pick a specific strategy (e.g., Upstash) or just use a simple in-memory/database check if traffic is low.
