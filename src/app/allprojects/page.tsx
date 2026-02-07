@@ -1,13 +1,19 @@
-import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { ChevronDown } from "lucide-react";
+import { sanityFetch } from "../../../sanity/lib/fetch";
+import { projectsQuery } from "../../../sanity/lib/queries";
+import { Project } from "@/types/sanity";
 
 export const metadata = {
   title: "All Projects | Portfolio",
   description: "A complete archive of my work in development, design, and experimentation.",
 };
 
-export default function AllProjectsPage() {
+export const revalidate = 60;
+
+export default async function AllProjectsPage() {
+  const projects = await sanityFetch<Project[]>({ query: projectsQuery }) || [];
+
   return (
     <main className="flex-grow min-h-screen relative">
       <section className="relative pt-24 pb-16 px-6 lg:px-8">
@@ -46,7 +52,7 @@ export default function AllProjectsPage() {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-2">
             {projects.map((project, index) => (
-              <ProjectCard key={project.title} project={project} />
+              <ProjectCard key={project._id} project={project} />
             ))}
           </div>
 
