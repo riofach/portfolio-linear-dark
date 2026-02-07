@@ -7,33 +7,33 @@
 
 **Milestone:** v1.2 Backend & Security
 **Phase:** 6 of 9 (CMS Integration)
-**Plan:** 4 of 6 in current phase
+**Plan:** 5 of 6 in current phase
 **Status:** In progress
-**Last activity:** 2026-02-07 - Completed 06-04-PLAN.md
+**Last activity:** 2026-02-07 - Completed 06-05-PLAN.md
 
-**Progress:** ███████░░░░░░░░░░░░░ 46%
+**Progress:** ████████░░░░░░░░░░░ 50%
 
 ## Context
 
 **Recent Achievements:**
-- Added data fetching layer (`sanity/lib/queries.ts`, `client.ts`).
-- Defined TypeScript interfaces for Sanity content.
-- Defined core schemas (Project, Experience, Skill, Post, Settings) in Sanity.
-- Integrated Sanity Studio (`/studio`) with Next.js App Router.
+- Integrated Sanity data into Homepage (Hero, Projects).
+- Added dynamic Projects listing page.
+- Created Blog listing page with PostCard components.
+- Implemented image URL builder (`sanity/lib/image.ts`).
 
 **Current Focus:**
-Defining remaining schemas (Social, Config) and populating initial content.
+Integrating dynamic data (Blog details, Project details) and finalizing CMS content.
 
 ## Performance Metrics
 
 - **Lighthouse Score:** 100 (Performance) - *Target*
 - **Bundle Size:** TBD
-- **Requirements Covered:** 4/20 (v1.2)
+- **Requirements Covered:** 7/20 (v1.2)
 
 ## Session Continuity
 
 **Last session:** 2026-02-07
-**Stopped at:** Completed 06-04-PLAN.md
+**Stopped at:** Completed 06-05-PLAN.md
 **Resume file:** None
 
 ## Decisions
@@ -46,6 +46,9 @@ Defining remaining schemas (Social, Config) and populating initial content.
 | 06 | Created sanity/env.ts for centralized env vars | Validates env vars and improves developer experience |
 | 06 | Used sanityFetch wrapper for ISR support | Easy integration with Next.js caching |
 | 06 | Used manual type definitions instead of Sanity TypeGen | Simpler setup for initial phase |
+| 06 | Moved types to src/types for import resolution | Fixed TS path alias issues in Next.js components |
+| 06 | Created image URL builder helper | Standard pattern for Sanity image handling |
+| 06 | Used server components for data fetching | Improved performance and caching (ISR) |
 
 ## Blockers/Concerns Carried Forward
-None.
+- Detail pages for Projects and Blog Posts needed (links currently point to slugs but pages missing).
