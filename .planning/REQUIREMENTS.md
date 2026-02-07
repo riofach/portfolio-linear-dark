@@ -7,12 +7,12 @@
 
 ### Content Management (CMS)
 
-- [ ] **CMS-01:** Integrate Sanity CMS with Next.js App Router (next-sanity).
-- [ ] **CMS-02:** Define schemas for Projects (title, slug, description, tags, images, links).
-- [ ] **CMS-03:** Define schemas for Experience (role, company, date, description).
-- [ ] **CMS-04:** Define schemas for Skills (name, category, icon/image).
-- [ ] **CMS-05:** Define schemas for Blog Posts (title, slug, content/portable text, date).
-- [ ] **CMS-06:** Define schemas for Site Metadata (SEO title, description, social links).
+- [x] **CMS-01:** Integrate Sanity CMS with Next.js App Router (next-sanity).
+- [x] **CMS-02:** Define schemas for Projects (title, slug, description, tags, images, links).
+- [x] **CMS-03:** Define schemas for Experience (role, company, date, description).
+- [x] **CMS-04:** Define schemas for Skills (name, category, icon/image).
+- [x] **CMS-05:** Define schemas for Blog Posts (title, slug, content/portable text, date).
+- [x] **CMS-06:** Define schemas for Site Metadata (SEO title, description, social links).
 - [ ] **CMS-07:** Enable "Draft Mode" for previewing content before publishing.
 
 ### Internationalization (i18n)
@@ -58,12 +58,12 @@
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| CMS-01 | Phase 6 | Pending |
-| CMS-02 | Phase 6 | Pending |
-| CMS-03 | Phase 6 | Pending |
-| CMS-04 | Phase 6 | Pending |
-| CMS-05 | Phase 6 | Pending |
-| CMS-06 | Phase 6 | Pending |
+| CMS-01 | Phase 6 | Complete |
+| CMS-02 | Phase 6 | Complete |
+| CMS-03 | Phase 6 | Complete |
+| CMS-04 | Phase 6 | Complete |
+| CMS-05 | Phase 6 | Complete |
+| CMS-06 | Phase 6 | Complete |
 | CMS-07 | Phase 9 | Pending |
 | I18N-01 | Phase 7 | Pending |
 | I18N-02 | Phase 7 | Pending |
