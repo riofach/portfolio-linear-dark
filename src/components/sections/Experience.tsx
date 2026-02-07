@@ -1,10 +1,16 @@
 "use client";
 
-import { Terminal, PenTool, Code, LucideIcon } from "lucide-react";
-import { experience } from "@/data/experience";
+import { Terminal, PenTool, Code, LucideIcon, Briefcase } from "lucide-react";
 import { motion } from "motion/react";
 import { cn } from "@/lib/utils";
 import { FADE_UP, STAGGER, VIEWPORT_CONFIG, SPRING_SUBTLE } from "@/lib/motion";
+import { Experience as ExperienceType } from "@/types/sanity";
+import { urlFor } from "../../../sanity/lib/image";
+import Image from "next/image";
+
+interface ExperienceProps {
+  experiences: ExperienceType[];
+}
 
 const iconMap: Record<string, LucideIcon> = {
   terminal: Terminal,
@@ -12,7 +18,13 @@ const iconMap: Record<string, LucideIcon> = {
   code: Code,
 };
 
-export function Experience() {
+export function Experience({ experiences }: ExperienceProps) {
+  const formatDate = (dateString?: string) => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    return new Intl.DateTimeFormat("en-US", { month: "short", year: "numeric" }).format(date);
+  };
+
   return (
     <section className="py-24 px-6 lg:px-8" id="experience">
       <div className="mx-auto max-w-7xl">
@@ -33,13 +45,16 @@ export function Experience() {
             whileInView="animate"
             viewport={VIEWPORT_CONFIG}
           >
-            {experience.map((item, index) => {
-              const Icon = iconMap[item.icon] || Code;
-              const isLast = index === experience.length - 1;
+            {experiences?.map((item, index) => {
+              const isLast = index === experiences.length - 1;
               const isFirst = index === 0;
+              
+              const startDate = formatDate(item.startDate);
+              const endDate = item.current ? "Present" : formatDate(item.endDate);
+              const period = `${startDate} - ${endDate}`;
 
               return (
-                <div key={index} className="contents">
+                <div key={item._id} className="contents">
                   {/* Icon Column */}
                   <motion.div 
                     className={`flex flex-col items-center ${isFirst ? "pt-2" : ""}`}
@@ -47,13 +62,24 @@ export function Experience() {
                     transition={SPRING_SUBTLE}
                   >
                     <div
-                      className={`flex h-12 w-12 items-center justify-center rounded-full bg-card-dark border border-border-dark ${
+                      className={`flex h-12 w-12 items-center justify-center rounded-full bg-card-dark border border-border-dark overflow-hidden relative ${
                         isFirst
                           ? "text-primary shadow-[0_0_15px_rgba(91,19,236,0.15)]"
                           : "text-white"
                       }`}
                     >
-                      <Icon size={24} />
+                      {item.logo ? (
+                        <div className="relative w-full h-full">
+                           <Image 
+                             src={urlFor(item.logo).url()} 
+                             alt={item.company} 
+                             fill 
+                             className="object-cover"
+                           />
+                        </div>
+                      ) : (
+                        <Briefcase size={24} />
+                      )}
                     </div>
                     {!isLast && (
                       <div className="h-full w-[1px] bg-border-dark my-2 relative overflow-hidden">
@@ -81,15 +107,17 @@ export function Experience() {
                             : "text-zinc-400 bg-card-dark border-border-dark"
                         }`}
                       >
-                        {item.period}
+                        {period}
                       </span>
                     </div>
                     <p className="text-zinc-400 text-base mt-2 leading-relaxed">
                       {item.company}
                     </p>
-                    <p className="text-slate-400 mt-4 leading-relaxed max-w-2xl">
-                      {item.description}
-                    </p>
+                    {item.description && (
+                      <p className="text-slate-400 mt-4 leading-relaxed max-w-2xl">
+                        {item.description}
+                      </p>
+                    )}
                   </motion.div>
                 </div>
               );
