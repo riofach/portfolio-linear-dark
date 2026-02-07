@@ -35,6 +35,15 @@ This roadmap transitions the portfolio from a static single-page application to 
 3. Site metadata (title, description) loads from global CMS settings.
 4. No hardcoded content remains in `src/data` for core sections.
 
+**Plans:**
+- [x] 06-01-PLAN.md — Integrate Sanity CMS
+- [x] 06-02-PLAN.md — Define Project Schema
+- [x] 06-03-PLAN.md — Define Experience Schema
+- [x] 06-04-PLAN.md — Define Skills Schema
+- [x] 06-05-PLAN.md — Define Blog/Meta Schemas
+- [ ] 06-06-PLAN.md — Integrate Experience and Skills (Gap Closure)
+- [ ] 06-07-PLAN.md — Create Detail Pages
+
 ---
 
 ## Phase 7: Internationalization
