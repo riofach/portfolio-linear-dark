@@ -6,34 +6,37 @@
 ## Current Position
 
 **Milestone:** v1.2 Backend & Security
-**Phase:** 6 - CMS Integration
-**Status:** Planning / Ready to Start
-**Progress:** [....................] 0%
+**Phase:** 6 of 9 (CMS Integration)
+**Plan:** 1 of 6 in current phase
+**Status:** In progress
+**Last activity:** 2026-02-07 - Completed 06-01-PLAN.md
+
+**Progress:** ███████░░░░░░░░░░░░░ 35%
 
 ## Context
 
 **Recent Achievements:**
-- Shipped v1.1 (Projects Archive) with responsive grid and visual parity to reference.
-- Validated high-performance SPA architecture.
+- Integrated Sanity Studio (`/studio`) with Next.js App Router.
+- Configured environment variables for CMS connection.
 
 **Current Focus:**
-Integrating Sanity CMS to make the portfolio dynamic. We are moving from static `data/*.ts` files to a hosted content backend. This is the foundational step for v1.2.
+Defining content schemas (Projects, Experience, Skills) to replace static data files.
 
 ## Performance Metrics
 
 - **Lighthouse Score:** 100 (Performance) - *Target*
-- **Bundle Size:** TBD (Monitoring impact of Sanity/i18n)
-- **Requirements Covered:** 0/20 (v1.2)
+- **Bundle Size:** TBD
+- **Requirements Covered:** 1/20 (v1.2)
 
 ## Session Continuity
 
-**Next Action:**
-Begin Phase 6 Planning.
-`> /gsd-plan-phase 6`
+**Last session:** 2026-02-07
+**Stopped at:** Completed 06-01-PLAN.md
+**Resume file:** None
 
-**Active Blockers:**
+## Decisions
+| 06 | Used next-sanity for App Router integration | Official recommendation for Next.js 13+ |
+| 06 | Embedded Studio in /studio route | Simplifies deployment, single codebase |
+
+## Blockers/Concerns Carried Forward
 None.
-
-**Notes:**
-- Ensure Sanity schemas map cleanly to existing UI components to minimize refactoring.
-- Keep "linear-dark" styling consistent when rendering dynamic content.

@@ -1,7 +1,7 @@
 # Project Roadmap: Portfolio Linear Dark
 
 **Milestone:** v1.2 Backend & Security
-**Status:** Planning
+**Status:** In Progress
 **Start Date:** 2026-02-07
 
 ## Overview
@@ -20,14 +20,14 @@ This roadmap transitions the portfolio from a static single-page application to 
 
 **Goal:** Transition content management from static files to Sanity CMS to enable real-time updates without code deployment.
 
-| Requirement | Description |
-|-------------|-------------|
-| **CMS-01** | Integrate Sanity CMS with Next.js App Router (next-sanity). |
-| **CMS-02** | Define schemas for Projects (title, slug, description, tags, images, links). |
-| **CMS-03** | Define schemas for Experience (role, company, date, description). |
-| **CMS-04** | Define schemas for Skills (name, category, icon/image). |
-| **CMS-05** | Define schemas for Blog Posts (title, slug, content/portable text, date). |
-| **CMS-06** | Define schemas for Site Metadata (SEO title, description, social links). |
+| Requirement | Description | Status |
+|-------------|-------------|--------|
+| **CMS-01** | Integrate Sanity CMS with Next.js App Router (next-sanity). | **Complete** |
+| **CMS-02** | Define schemas for Projects (title, slug, description, tags, images, links). | Pending |
+| **CMS-03** | Define schemas for Experience (role, company, date, description). | Pending |
+| **CMS-04** | Define schemas for Skills (name, category, icon/image). | Pending |
+| **CMS-05** | Define schemas for Blog Posts (title, slug, content/portable text, date). | Pending |
+| **CMS-06** | Define schemas for Site Metadata (SEO title, description, social links). | Pending |
 
 **Success Criteria:**
 1. Projects, Experience, and Skills sections render content dynamically fetched from Sanity.
@@ -106,7 +106,7 @@ This roadmap transitions the portfolio from a static single-page application to 
 
 | Phase | Goal | Status |
 |-------|------|--------|
-| **6** | CMS Integration | **Pending** |
+| **6** | CMS Integration | **In Progress** |
 | **7** | Internationalization | **Pending** |
 | **8** | Contact & Interaction | **Pending** |
 | **9** | Optimization & SEO | **Pending** |
