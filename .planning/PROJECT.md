@@ -1,7 +1,7 @@
 # Project: Portfolio Linear Dark (Next.js Migration)
 
 ## What This Is
-A single-page personal portfolio website built with Next.js and Tailwind CSS. It features a "linear-dark" aesthetic and is enhanced with subtle, professional animations using Motion.dev (Framer Motion). v1.0 MVP shipped with high-performance SPA architecture.
+A single-page personal portfolio website built with Next.js and Tailwind CSS. It features a "linear-dark" aesthetic and is enhanced with subtle, professional animations using Motion.dev (Framer Motion). v1.0 MVP shipped with high-performance SPA architecture. v1.1 added a dedicated Projects Archive.
 
 ## Core Value
 To provide a polished, high-performance, and visually engaging online presence that showcases the developer's skills and projects. It serves as a modern replacement for the static HTML version, improving maintainability and user experience through smooth motion and component-based architecture.
@@ -11,13 +11,14 @@ To provide a polished, high-performance, and visually engaging online presence t
 - **Styling:** Tailwind CSS (matching existing design)
 - **Animation:** Motion.dev (Framer Motion) - "Subtle & Professional"
 - **Content:** English language only
-- **Architecture:** Single Page Application (SPA) with scroll navigation
+- **Architecture:** Single Page Application (SPA) with scroll navigation + Multi-page Archive
 - **Design:** Strict adherence to the provided `code1.html` layout and "linear-dark" theme
 - **Reference:** Projects page must match `_reference/projects.html` style (excluding Header/Footer)
 
 ## Requirements
 
 ### Validated
+
 - ✓ **ARCH-01:** Initialize Next.js 16 project with App Router, TypeScript, and ESLint. — v1.0
 - ✓ **ARCH-02:** Configure Tailwind CSS v4 with "linear-dark" theme variables. — v1.0
 - ✓ **ARCH-03:** Install and configure `motion` (Motion.dev v12). — v1.0
@@ -37,13 +38,17 @@ To provide a polished, high-performance, and visually engaging online presence t
 - ✓ **MOT-05:** Add sequential fade-in animation for timeline items. — v1.0
 - ✓ **SEC-06:** Implement Contact section UI (Form + Info) and Footer. — v1.0
 - ✓ **SEC-07:** Ensure Contact form has accessible inputs. — v1.0
+- ✓ **PROJ-01:** Create `/allprojects` route with separate page layout. — v1.1
+- ✓ **PROJ-02:** Implement responsive projects grid matching `projects.html` reference. — v1.1
+- ✓ **PROJ-03**: Integrate existing global Header and Footer into `/allprojects` (replace reference nav). — v1.1
+- ✓ **PROJ-04**: Connect Home page "View all projects" button to `/allprojects`. — v1.1
+- ✓ **PROJ-05**: Remove filter tabs (Development, Design, Writing) as requested. — v1.1
 
 ### Active
-- [ ] **PROJ-01**: Create `/allprojects` route with separate page layout.
-- [ ] **PROJ-02**: Implement responsive projects grid matching `projects.html` reference.
-- [ ] **PROJ-03**: Integrate existing global Header and Footer into `/allprojects` (replace reference nav).
-- [ ] **PROJ-04**: Connect Home page "View all projects" button to `/allprojects`.
-- [ ] **PROJ-05**: Remove filter tabs (Development, Design, Writing) as requested.
+- [ ] **BE-01**: Connect Contact form to an email service (Resend/Nodemailer).
+- [ ] **BE-02**: Integrate a CMS (Sanity/Strapi) for managing Projects and Blog posts.
+- [ ] **INT-01**: Add multi-language support (Bahasa Indonesia).
+- [ ] **SEO-01**: Implement comprehensive SEO meta tags and Open Graph images.
 
 ### Out of Scope
 - **User Auth**: No user login required for a portfolio.
@@ -52,7 +57,7 @@ To provide a polished, high-performance, and visually engaging online presence t
 - **Filters**: Explicitly removed from Projects Archive scope.
 
 ## Context
-Shipped v1.0 MVP with ~1600 LOC TypeScript.
+Shipped v1.1 with ~1640 LOC TypeScript.
 Tech stack: Next.js 16, Tailwind v4, Motion v12, Lucide React.
 Achieved high performance (100 Lighthouse Performance score targeted) and polished "linear-dark" aesthetic.
 
@@ -73,15 +78,19 @@ Achieved high performance (100 Lighthouse Performance score targeted) and polish
 | **Centralized Motion** | Consistency. | Used `src/lib/motion.ts` for consistent physics. | ✓ Good |
 | **Metadata API** | Modern Next.js. | Used Next.js 14+ Metadata API for SEO. | ✓ Good |
 | **MotionLink Pattern** | UX. | Wrapped `next/link` with `motion.create()` for interactive cards. | ✓ Good |
+| **Used /#section for anchor links** | Ensures navigation works from both home (scroll) and other pages (redirect). | Navigation consistent. | ✓ Good |
+| **Removed filters from Archive** | Explicit design requirement for v1.1. | Simplified UI. | ✓ Good |
+| **Visual-only "Load More"** | Pagination out of scope for small project count. | Button present but disabled. | ✓ Good |
 
-## Current Milestone: v1.1 Projects Archive
+## Current Milestone: v1.2 Backend & Security
 
-**Goal:** Expand portfolio with a dedicated "All Projects" archive page based on provided reference design.
+**Goal:** Integrate backend services (CMS, Email) and optimize for SEO/i18n.
 
 **Target features:**
-- Dedicated `/allprojects` route
-- Visual parity with `_reference/projects.html`
-- Seamless navigation integration
+- Contact form email integration
+- CMS integration
+- SEO meta tags
+- Internationalization
 
 ---
-*Last updated: 2026-02-06 after v1.0 milestone*
+*Last updated: 2026-02-06 after v1.1 milestone*
