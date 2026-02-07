@@ -4,8 +4,8 @@ import { Skills } from "@/components/sections/Skills";
 import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
 import { Contact } from "@/components/sections/Contact";
-import { sanityFetch } from "../../sanity/lib/fetch";
-import { settingsQuery, projectsQuery, experiencesQuery, skillsQuery } from "../../sanity/lib/queries";
+import { sanityFetch } from "../../../sanity/lib/fetch";
+import { settingsQuery, projectsQuery, experiencesQuery, skillsQuery } from "../../../sanity/lib/queries";
 import { Settings, Project, Experience as ExperienceType, Skill } from "@/types/sanity";
 
 export const revalidate = 60;

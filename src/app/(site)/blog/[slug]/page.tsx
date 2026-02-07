@@ -3,9 +3,9 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, Calendar, User } from "lucide-react";
 import { PortableText, PortableTextComponents } from "@portabletext/react";
-import { sanityFetch } from "../../../../sanity/lib/fetch";
-import { postQuery, postsQuery } from "../../../../sanity/lib/queries";
-import { urlFor } from "../../../../sanity/lib/image";
+import { sanityFetch } from "../../../../../sanity/lib/fetch";
+import { postQuery, postsQuery } from "../../../../../sanity/lib/queries";
+import { urlFor } from "../../../../../sanity/lib/image";
 import { Post } from "@/types/sanity";
 
 export const revalidate = 60;

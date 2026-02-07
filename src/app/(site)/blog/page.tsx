@@ -1,6 +1,6 @@
 import { PostCard } from "@/components/ui/PostCard";
-import { sanityFetch } from "../../../sanity/lib/fetch";
-import { postsQuery } from "../../../sanity/lib/queries";
+import { sanityFetch } from "../../../../sanity/lib/fetch";
+import { postsQuery } from "../../../../sanity/lib/queries";
 import { Post } from "@/types/sanity";
 
 export const metadata = {

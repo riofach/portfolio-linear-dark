@@ -1,7 +1,7 @@
 import { ProjectCard } from "@/components/ui/ProjectCard";
 import { ChevronDown } from "lucide-react";
-import { sanityFetch } from "../../../sanity/lib/fetch";
-import { projectsQuery } from "../../../sanity/lib/queries";
+import { sanityFetch } from "../../../../sanity/lib/fetch";
+import { projectsQuery } from "../../../../sanity/lib/queries";
 import { Project } from "@/types/sanity";
 
 export const metadata = {

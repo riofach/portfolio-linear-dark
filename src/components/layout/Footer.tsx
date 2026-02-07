@@ -6,9 +6,9 @@ export function Footer() {
 
 	return (
 		<footer className="w-full bg-card-dark border-t border-border-dark py-12">
-			<div className="max-w-7xl mx-auto px-6 lg:px-8">
-				<div className="flex flex-col md:flex-row items-center justify-between gap-8">
-					<div className="flex flex-col items-center md:items-start gap-2">
+			<div className="max-w-7xl mx-auto px-6 lg:px-8" suppressHydrationWarning>
+				<div className="flex flex-col md:flex-row items-center justify-between gap-8" suppressHydrationWarning>
+					<div className="flex flex-col items-center md:items-start gap-2" suppressHydrationWarning>
 						<span className="text-xl font-bold text-white tracking-tight">Fachrio.dev</span>
 						<p className="text-zinc-400 text-sm">Building digital experiences that matter.</p>
 					</div>
