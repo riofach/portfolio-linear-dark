@@ -23,9 +23,9 @@ This roadmap transitions the portfolio from a static single-page application to 
 | Requirement | Description | Status |
 |-------------|-------------|--------|
 | **CMS-01** | Integrate Sanity CMS with Next.js App Router (next-sanity). | **Complete** |
-| **CMS-02** | Define schemas for Projects (title, slug, description, tags, images, links). | Pending |
-| **CMS-03** | Define schemas for Experience (role, company, date, description). | Pending |
-| **CMS-04** | Define schemas for Skills (name, category, icon/image). | Pending |
+| **CMS-02** | Define schemas for Projects (title, slug, description, tags, images, links). | **Complete** |
+| **CMS-03** | Define schemas for Experience (role, company, date, description). | **Complete** |
+| **CMS-04** | Define schemas for Skills (name, category, icon/image). | **Complete** |
 | **CMS-05** | Define schemas for Blog Posts (title, slug, content/portable text, date). | Pending |
 | **CMS-06** | Define schemas for Site Metadata (SEO title, description, social links). | Pending |
 
